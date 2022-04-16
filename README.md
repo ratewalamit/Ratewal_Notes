@@ -22,3 +22,7 @@ git push -u origin main
 
 # to sync on gihub main branch
 git branch -m master main 
+
+
+# to delete a repository
+rm -rf .git
