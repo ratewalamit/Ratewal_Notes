@@ -26,5 +26,8 @@ git branch -m master main
 
 # to delete a repository
 rm -rf .git
+
+
+
 or rm -rf full_path_of_repo
 
