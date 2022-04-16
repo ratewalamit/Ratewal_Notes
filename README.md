@@ -6,9 +6,8 @@ to push your content to gihub....your local ssh key need to be stored at github 
 
 **#…or create a new repository on the command line**
 
-echo "# POWMES" >> README.md
 git init
-git add README.md
+git add -A
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:ratewalamit/POWMES.git
