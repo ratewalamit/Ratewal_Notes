@@ -2,6 +2,8 @@
 
 to push your content to gihub....your local ssh key need to be stored at github in ssh_keys menu. This will avoid typing you the github password again and again.
 
+
+
 **#…or create a new repository on the command line**
 
 echo "# POWMES" >> README.md
@@ -30,4 +32,7 @@ rm -rf .git
 
 
 or rm -rf full_path_of_repo
+
+# putting upper limit on files size
+find . -size +45M >.gitignore
 
