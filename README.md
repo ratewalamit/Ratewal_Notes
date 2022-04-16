@@ -18,3 +18,7 @@ git push -u origin main
 git remote add origin git@github.com:ratewalamit/POWMES.git
 git branch -M main
 git push -u origin main
+
+
+# to sync on gihub main branch
+git branch -m master main 
