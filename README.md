@@ -35,3 +35,6 @@ or rm -rf full_path_of_repo
 # putting upper limit on files size
 find . -size +45M >.gitignore
 
+# remove added files to git only not from local machine
+git rm -rf --cahced .
+
