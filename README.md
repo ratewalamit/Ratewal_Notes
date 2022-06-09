@@ -34,6 +34,8 @@ or rm -rf full_path_of_repo
 
 # putting upper limit on files size
 find . -size +45M >.gitignore
+slash at the beginning of a pattern is relative to the directory where the .gitignore resides.
+
 
 # remove added files to git only not from local machine
 git rm -rf --cahced .
