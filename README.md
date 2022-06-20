@@ -14,6 +14,20 @@ git remote add origin git@github.com:ratewalamit/POWMES.git
 git push -u origin main
 
 
+**#...starting default branch as main**
+
+in **old** versions of git:
+git init
+git checkout -b main
+
+in **new** git versions: git config --global init.defaultBranch main        #after this it will start new repo with main branch
+(without adding git config global:
+git init --initial-branch=main
+git init -b main)
+
+
+
+
 
 **#…or push an existing repository from the command line**
 git remote add origin git@github.com:ratewalamit/POWMES.git
