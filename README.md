@@ -115,3 +115,7 @@ steps:
 >  git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you have made changes in you repo
 >git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
 
+> tree ./
+./
+├── bar.js
+└── foo.js  
