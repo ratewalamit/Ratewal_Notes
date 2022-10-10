@@ -78,7 +78,8 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 
 **To sync on gihub main branch**
 ```shell
-git branch -m master main```
+git branch -m master main
+```
 
 **Gitignore: Putting upper limit on files size**
 ```shell
