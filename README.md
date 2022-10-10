@@ -1,13 +1,30 @@
-# git-cheat-sheat
+# How to write in Readme.md
+README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
+**This is bold text**	This is bold text
+*This text is italicized*	This text is italicized
+~~This was mistaken text~~	This was mistaken text
+**This text is _extremely_ important**	This text is extremely important
+***All this text is important***	All this text is important
+
+
+
+
+# 1. git-cheat-sheat
 
 To push your content to gihub....your local ssh key need to be stored at github ( can be located in ssh_keys menu of github). This will avoid typing you the github password again and again.
 (Hot to create a ssh-key, see [here](https://gist.github.com/surhudm/4b04da1682a15ded4c7a1a3da0514955))
 
 
-**#…or create a new repository on the command line**
+**#…To create a new repository**
+git init   
+# to delete a repository
+rm -rf .git
 
-git init    <!-- will initialize a empty git repository -->                                      
-git add -A  (git reset for undo git add -A)
+# To add files for tracking
+git add -A       \#for all files
+git add sample.txt   # to add specific files
+
+(git reset for undo git add -A)
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:ratewalamit/POWMES.git
@@ -40,8 +57,7 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 git branch -m master main 
 
 
-# to delete a repository
-rm -rf .git
+
 
 
 
