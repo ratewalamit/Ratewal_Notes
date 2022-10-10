@@ -6,7 +6,7 @@ To push your content to gihub....your local ssh key need to be stored at github 
 
 **#…or create a new repository on the command line**
 
-git init
+git init    <!-- will initialize a empty git repository -->                                      
 git add -A  (git reset for undo git add -A)
 git commit -m "first commit"
 git branch -M main
