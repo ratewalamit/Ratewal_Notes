@@ -108,7 +108,7 @@ find . -size +45M >.gitignore
 _If the pattern starts with a slash, it matches files and directories only in the repository root.
 If the pattern doesn’t start with a slash, it matches files and directories in any directory or subdirectory.
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored._
-for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20)%20to%20escape%20the%20character)
+for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
 
 # remove added files to git only not from local machine
 git rm -rf --cahced .
