@@ -28,10 +28,14 @@ rm -rf .git
 
 **To add files for tracking**
 
+$ `\textcolor{teal}{ \text{ Eq.(3-5) in the main text} } `$
+
 git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
+
 git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
 
-(git reset for undo git add -A)
+***(git reset for undo git add -A)***
+
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:ratewalamit/POWMES.git
