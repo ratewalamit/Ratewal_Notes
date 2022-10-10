@@ -34,8 +34,8 @@ rm -rf .git        #or rm -rf full_path_of_repo
 
 **To add files for tracking**
 ```shell
-git add -A        \#  for all files
-git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
+git add -A           #  for all files
+git add sample.txt   #   to add specific files
 ```
 
 ***(git reset for undo git add -A)***
@@ -59,7 +59,6 @@ git remote add origin git@github.com:ratewalamit/POWMES.git
 git push -u origin master     # will push master branch to the server
 ```
 
-
 **#...starting default branch as main**
 
 ```shell
@@ -70,19 +69,20 @@ git branch -M main
 
 _in **old** versions of git:
 
+```shell
 git init
-
 git checkout -b main
+```
 
 in **new** git versions: 
 
-git config --global init.defaultBranch main        \#after this it will start new repo with main branch
-
-(without adding git config global:
-
-git init --initial-branch=main
-
-git init -b main)_ 
+```shell
+git config --global init.defaultBranch main        #after this it will start new repo with main branch
+#(without adding git config global:
+#git init --initial-branch=main
+git init -b main
+```
+)_ 
 
 
 
