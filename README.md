@@ -26,6 +26,8 @@ git init
 
 rm -rf .git
 
+or rm -rf full_path_of_repo
+
 **To add files for tracking**
 
 git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
@@ -86,7 +88,7 @@ git branch -m master main
 
 
 
-or rm -rf full_path_of_repo
+
 
 # putting upper limit on files size
 find . -size +45M >.gitignore
@@ -99,4 +101,16 @@ https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20P
 
 # remove added files to git only not from local machine
 git rm -rf --cahced .
+
+#Syncing changes
+imagine you(A) and your friend (B) cloned master branch of some project. 
+now you both made a branch from master of the main project. 
+your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.
+Now you want to pull changes made by him also along wiht your changes
+
+steps:
+git checkout -b master
+git fetch origin master    #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
+git checkout -b <your branch>   #now you are on your local repo which you had created from clonned version of old master and you have made changes in you repo
+git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
 
