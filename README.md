@@ -49,10 +49,11 @@ git push -u origin master     # will push master branch to the server
 ```
 
 ```shell
-git branch --move master main   #  will rename master to main
+#git branch --move master main   #  will rename master to main
 #or 
 #git branch -M main 
 ```
+Starting a new repository with name main
 
 * In **old** versions of git:
      ```shell
