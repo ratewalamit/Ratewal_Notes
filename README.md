@@ -21,12 +21,15 @@ git add -A           #  for all files
 git add sample.txt   #   to add specific files
 ```
 
-**Git reset**
+**Git reset: Remove added files to git only from local machine**
 ```shell
 git reset    #for undo git add -A
 #remove already tacked file/folder but now in .gitignore
-#
+#git rm --cached <filename>
+#git rm -rf --cahced .  
+#git rm -r --cached <foldername>
 ```
+
 
 *You need to make a commit in order to push something on the web*
 ```shell
@@ -93,12 +96,6 @@ If the pattern doesn’t start with a slash, it matches files and directories in
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored. for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
 
 
-**Remove added files to git only not from local machine**
-```shell
-git rm -rf --cahced .
-#git rm -r --cached <foldername>
-#git rm --cached <filename>
-```
 
 **Syncing changes: git rebase**
 
