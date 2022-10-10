@@ -30,6 +30,7 @@ rm -rf .git
 
 $ `\textcolor{teal}{ \text{ Eq.(3-5) in the main text} } `$
 
+\textcolor{ green }{ \text{ Your text } }
 git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
 
 git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
