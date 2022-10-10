@@ -108,6 +108,13 @@ now you both made a branch from master of the main project.
 your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.
 Now you want to pull changes made by him also along wiht your changes
 
+> tree ./
+./
+├── bar.js
+└── foo.js
+
+
+
 steps:
 > tree ./
 > git checkout -b master
