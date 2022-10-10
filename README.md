@@ -67,7 +67,7 @@ git branch --move master main   #  will rename master to main
 git branch -M main 
 ```
 
-_in **old** versions of git:
+in **old** versions of git:
 
 ```shell
 git init
@@ -78,39 +78,37 @@ in **new** git versions:
 
 ```shell
 git config --global init.defaultBranch main        #after this it will start new repo with main branch
-#(without adding git config global:
+# for without adding git config global:
 #git init --initial-branch=main
 git init -b main
 ```
-)_ 
 
 
 
 **#…or push an existing repository from the command line**
+```shell
 git remote add origin git@github.com:ratewalamit/POWMES.git
 git branch -M main
 git push -u origin main
+```
 
-A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
+_A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
+_
 
 # to sync on gihub main branch
+
+```shell
 git branch -m master main 
-
-
-
-
-
-
-
+```
 
 # putting upper limit on files size
+```shell
 find . -size +45M >.gitignore
-
-If the pattern starts with a slash, it matches files and directories only in the repository root.
+```
+_If the pattern starts with a slash, it matches files and directories only in the repository root.
 If the pattern doesn’t start with a slash, it matches files and directories in any directory or subdirectory.
-If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored.
-See link for more:
-https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20)%20to%20escape%20the%20character.
+If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored._
+for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20)%20to%20escape%20the%20character)
 
 # remove added files to git only not from local machine
 git rm -rf --cahced .
