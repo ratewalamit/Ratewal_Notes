@@ -95,13 +95,12 @@ git push -u origin main
 _A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
 _
 
-# to sync on gihub main branch
-
+**to sync on gihub main branch**
 ```shell
 git branch -m master main 
 ```
 
-# putting upper limit on files size
+**putting upper limit on files size**
 ```shell
 find . -size +45M >.gitignore
 ```
@@ -110,19 +109,21 @@ If the pattern doesn’t start with a slash, it matches files and directories in
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored._
 for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
 
-# remove added files to git only not from local machine
+
+**remove added files to git only not from local machine**
+```shell
 git rm -rf --cahced .
+```
 
-#Syncing changes
+**Syncing changes**
+
 imagine you(A) and your friend (B) cloned master branch of some project. 
-now you both made a branch from master of the main project. 
-your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.
-Now you want to pull changes made by him also along wiht your changes
+now you both made a branch from master of the main project. Your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.Now you want to pull changes made by him also along wiht your changes
 
-
-
-*steps:
+Steps:
+```shell
     git checkout -b master 
     git fetch origin master   #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
     git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you     have made changes in you repo.
     git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
+```
