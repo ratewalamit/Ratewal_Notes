@@ -30,35 +30,43 @@ git init
 **To delete a repository**
 ```shell
 rm -rf .git        #or rm -rf full_path_of_repo
-
 ```
 
 **To add files for tracking**
-
+```shell
 git add -A        \#  for all files
-
 git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
+```
 
 ***(git reset for undo git add -A)***
 
 *You need to make a commint in order to push something on the web*
+```shell
 git commit -m "first commit"
+```
 
 **Add github url of the repository wiht some name of your choice i.e. 'origin'**
 
+```shell
 git remote add origin git@github.com:ratewalamit/POWMES.git
+```
 
 **Pushing local changes on remote server**
 
 *(Before pushing local changes to server you need to do git add and git commint )*
 
-git push -u origin master     \#  &nbsp; &nbsp; &nbsp; will push master branch to the server
+```shell
+git push -u origin master     # will push master branch to the server
+```
 
 
 **#...starting default branch as main**
-git branch --move master main   \#  &nbsp; &nbsp; &nbsp;  \# will rename master to main
-or 
+
+```shell
+git branch --move master main   #  will rename master to main
+#or 
 git branch -M main 
+```
 
 _in **old** versions of git:
 
