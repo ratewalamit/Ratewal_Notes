@@ -29,13 +29,13 @@ git init
 
 **To delete a repository**
 ```shell
-rm -rf .git  &emsp; &emsp;  #or rm -rf full_path_of_repo
+rm -rf .git        #or rm -rf full_path_of_repo
 
 ```
 
 **To add files for tracking**
 
-git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
+git add -A        \#  for all files
 
 git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
 
