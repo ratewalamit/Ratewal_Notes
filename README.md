@@ -55,10 +55,13 @@ git branch --move master main   #  will rename master to main
 ```
 ## Version History
 
-* **old** versions of git:
-    * Various bug fixes and optimizations
+* In **old** versions of git:
+    * ```shell
+    git init
+    git checkout -b main
+```
     * See [commit change]() or See [release history]()
-*  **new** git versions:
+* In**new** git versions:
     * Initial Release
 
 in **old** versions of git:
