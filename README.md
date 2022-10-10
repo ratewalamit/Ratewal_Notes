@@ -97,7 +97,7 @@ If the pattern ends with a slash, it matches only directories. When a directory 
 git rm -rf --cahced .
 ```
 
-**Syncing changes: git rebase  **
+**Syncing changes: git rebase**
 
 Imagine you(A) and your friend (B) cloned master branch of some project.
 
