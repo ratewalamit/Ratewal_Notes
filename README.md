@@ -34,10 +34,11 @@ git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
 
 ***(git reset for undo git add -A)***
 
-**You need to make a commint in order to push something on the web**
+*You need to make a commint in order to push something on the web*
 git commit -m "first commit"
 
 **Add github url of the repository wiht some name of your choice i.e. 'origin'**
+
 git remote add origin git@github.com:ratewalamit/POWMES.git
 
 **Pushing local changes on remote server**
@@ -52,14 +53,21 @@ git branch --move master main   \#  &nbsp; &nbsp; &nbsp;  \# will rename master 
 or 
 git branch -M main 
 
-*(in **old** versions of git:
-git init
-git checkout -b main)*
+_in **old** versions of git:
 
-in **new** git versions: git config --global init.defaultBranch main        #after this it will start new repo with main branch
+git init
+
+git checkout -b main
+
+in **new** git versions: 
+
+git config --global init.defaultBranch main        \#after this it will start new repo with main branch
+
 (without adding git config global:
+
 git init --initial-branch=main
-git init -b main) 
+
+git init -b main)_ 
 
 
 
