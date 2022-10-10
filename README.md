@@ -28,31 +28,38 @@ rm -rf .git
 
 **To add files for tracking**
 
-$ `\textcolor{teal}{ \text{ Eq.(3-5) in the main text} } `$
-
-\textcolor{ green }{ \text{ Your text } }
 git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
 
 git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
 
 ***(git reset for undo git add -A)***
 
+**You need to make a commint in order to push something on the web**
 git commit -m "first commit"
-git branch -M main
+
+**Add github url of the repository wiht some name of your choice i.e. 'origin'**
 git remote add origin git@github.com:ratewalamit/POWMES.git
-git push -u origin main
+
+**Pushing local changes on remote server**
+
+*(Before pushing local changes to server you need to do git add and git commint )*
+
+git push -u origin master     \#  &nbsp; &nbsp; &nbsp; will push master branch to the server
 
 
 **#...starting default branch as main**
+git branch --move master main   \#  &nbsp; &nbsp; &nbsp;  \# will rename master to main
+or 
+git branch -M main 
 
-in **old** versions of git:
+*(in **old** versions of git:
 git init
-git checkout -b main
+git checkout -b main)*
 
 in **new** git versions: git config --global init.defaultBranch main        #after this it will start new repo with main branch
 (without adding git config global:
 git init --initial-branch=main
-git init -b main)
+git init -b main) 
 
 
 
