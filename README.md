@@ -57,17 +57,17 @@ git branch -M main
 in **old** versions of git:
 
 ```shell
-git init
-git checkout -b main
+    git init
+    git checkout -b main
 ```
 
 in **new** git versions: 
 
 ```shell
-git config --global init.defaultBranch main        #after this it will start new repo with main branch
-# for without adding git config global:
-#git init --initial-branch=main
-git init -b main
+    git config --global init.defaultBranch main        #after this it will start new repo with main branch
+    # for without adding git config global:
+    #git init --initial-branch=main
+    git init -b main
 ```
 
 
@@ -101,6 +101,7 @@ git rm -rf --cahced .
 ```
 
 **Syncing changes**
+
 Imagine you(A) and your friend (B) cloned master branch of some project.
 
 1. Now you both made a branch from master of the main project. 
