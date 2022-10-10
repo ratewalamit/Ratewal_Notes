@@ -1,20 +1,4 @@
 ----
-# How to write in Readme.md
-
-README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
-
-**This is bold text**	This is bold text
-
-*This text is italicized*	This text is italicized
-
-~~This was mistaken text~~	This was mistaken text
-
-**This text is _extremely_ important**	This text is extremely important
-
-***All this text is important***	All this text is important
-
-----
-
 # git-cheat-sheat
 
 To push your content to gihub....your local ssh key need to be stored at github ( can be located in ssh_keys menu of github). This will avoid typing you the github password again and again.
@@ -128,3 +112,20 @@ Steps:
     git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you     have made changes in you repo.
     git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
 ```
+
+
+# How to write in Readme.md
+
+README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
+
+**This is bold text**	This is bold text
+
+*This text is italicized*	This text is italicized
+
+~~This was mistaken text~~	This was mistaken text
+
+**This text is _extremely_ important**	This text is extremely important
+
+***All this text is important***	All this text is important
+
+----
