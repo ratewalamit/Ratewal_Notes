@@ -29,7 +29,7 @@ git init
 
 **To delete a repository**
 ```shell
-rm -rf .git #or rm -rf full_path_of_repo
+rm -rf .git  &emsp; &emsp;  #or rm -rf full_path_of_repo
 
 ```
 
