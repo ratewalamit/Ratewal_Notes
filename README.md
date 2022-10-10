@@ -1,5 +1,5 @@
 ----
-![#f03c15](https://via.placeholder.com/15/f03c15/f03c15.png) 
+![#f03c15]([https://via.placeholder.com/15/f03c15/f03c15.png](https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg)) 
 # Learning Github: git-cheat-sheat
 
 To push your content to gihub....your local ssh key need to be stored at github ( can be located in ssh_keys menu of github). This will avoid typing you the github password again and again.
