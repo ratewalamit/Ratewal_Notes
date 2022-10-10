@@ -60,27 +60,13 @@ git branch --move master main   #  will rename master to main
     git init
     git checkout -b main
 ```
-    * See [commit change]() or See [release history]()
 * In**new** git versions:
-    * Initial Release
-
-in **old** versions of git:
-
-```shell
-    git init
-    git checkout -b main
-```
-
-in **new** git versions: 
-
-```shell
+     ```shell
     git config --global init.defaultBranch main        #after this it will start new repo with main branch
     # for without adding git config global:
     #git init --initial-branch=main
     git init -b main
 ```
-
-
 
 **Push an existing repository from the command line**
 ```shell
