@@ -24,6 +24,8 @@ git add sample.txt   #   to add specific files
 **Git reset**
 ```shell
 git reset    #for undo git add -A
+#remove already tacked file/folder but now in .gitignore
+#
 ```
 
 *You need to make a commit in order to push something on the web*
@@ -94,6 +96,8 @@ If the pattern ends with a slash, it matches only directories. When a directory 
 **Remove added files to git only not from local machine**
 ```shell
 git rm -rf --cahced .
+#git rm -r --cached <foldername>
+#git rm --cached <filename>
 ```
 
 **Syncing changes: git rebase**
