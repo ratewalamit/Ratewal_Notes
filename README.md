@@ -58,9 +58,9 @@ git branch --move master main   #  will rename master to main
 * In **old** versions of git:
      ```shell
     git init
-    git checkout -b main
-```
-* In**new** git versions:
+    git checkout -b main```
+
+* In **new** git versions:
      ```shell
     git config --global init.defaultBranch main        #after this it will start new repo with main branch
     # for without adding git config global:
