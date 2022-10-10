@@ -29,7 +29,7 @@ rm -rf .git
 
 **To add files for tracking**
 
-git add -A       \#for all files
+git add -A      &nbsp; &nbsp; &nbsp;  \#for all files
 git add sample.txt   # to add specific files
 
 (git reset for undo git add -A)
