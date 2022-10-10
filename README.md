@@ -23,6 +23,9 @@ To push your content to gihub....your local ssh key need to be stored at github 
 ----
 
 **To create a new repository** 
+```shell
+pip install fpfs
+```
 git init   
 
 **To delete a repository**
