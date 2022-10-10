@@ -53,7 +53,7 @@ git branch --move master main   #  will rename master to main
 #or 
 #git branch -M main 
 ```
-## Version History
+# Version History
 
 * In **old** versions of git:
      ```shell
