@@ -108,21 +108,12 @@ now you both made a branch from master of the main project.
 your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.
 Now you want to pull changes made by him also along wiht your changes
 
-> tree ./
-./
-├── bar.js
-└── foo.js
-
 
 
 steps:
-> tree ./
-> git checkout -b master
-> git fetch origin master   #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
->  git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you have made changes in you repo
->git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
 
-> tree ./
-./
-├── bar.js
-└── foo.js  
+&emsp; git checkout -b master
+&emsp; git fetch origin master   #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
+&emsp; git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you have made changes in you repo.
+&emsp; git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
+
