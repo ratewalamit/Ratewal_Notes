@@ -56,7 +56,7 @@ git branch --move master main   #  will rename master to main
 ## Version History
 
 * In **old** versions of git:
-    * ```shell
+     ```shell
     git init
     git checkout -b main
 ```
