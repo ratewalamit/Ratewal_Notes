@@ -19,8 +19,7 @@ To push your content to gihub....your local ssh key need to be stored at github 
 (Hot to create a ssh-key, see [here](https://gist.github.com/surhudm/4b04da1682a15ded4c7a1a3da0514955))
 
 
-**To create a new repository**
-
+**To create a new repository** 
 git init   
 
 **To delete a repository**
@@ -29,8 +28,8 @@ rm -rf .git
 
 **To add files for tracking**
 
-git add -A      &nbsp; &nbsp; &nbsp;  \#for all files
-git add sample.txt   # to add specific files
+git add -A      &nbsp; &nbsp; &nbsp;  \#  for all files
+git add sample.txt   \#  &nbsp; &nbsp; &nbsp;  to add specific files
 
 (git reset for undo git add -A)
 git commit -m "first commit"
