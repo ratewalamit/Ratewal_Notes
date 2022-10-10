@@ -22,17 +22,19 @@ git add -A           #  for all files
 git add sample.txt   #   to add specific files
 ```
 
-***Git reset***
+**Git reset**
 ```shell
 git reset    #for undo git add -A
 ```
 
-*You need to make a commint in order to push something on the web*
+*You need to make a commit in order to push something on the web*
 ```shell
 git commit -m "first commit"
 ```
 
-**Add github url of the repository wiht some name of your choice i.e. 'origin'**
+**Add github url of the repository**
+
+wiht some name of your choice i.e. 'origin'
 
 ```shell
 git remote add origin git@github.com:ratewalamit/POWMES.git
@@ -40,7 +42,7 @@ git remote add origin git@github.com:ratewalamit/POWMES.git
 
 **Pushing local changes on remote server**
 
-Note:*Before pushing local changes to server you need to do git add and git commint* 
+Note:  *Before pushing local changes to server you need to do git add and git commint* 
 
 ```shell
 git push -u origin master     # will push master branch to the server
@@ -51,8 +53,6 @@ git branch --move master main   #  will rename master to main
 #or 
 #git branch -M main 
 ```
-
-**Version History**
 
 * In **old** versions of git:
      ```shell
@@ -78,13 +78,13 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 
 **To sync on gihub main branch**
 ```shell
-git branch -m master main 
-```
+git branch -m master main```
 
-**Gitignore: Putting upper limit on files size **
+**Gitignore: Putting upper limit on files size**
 ```shell
 find . -size +45M >.gitignore
 ```
+
 If the pattern starts with a slash, it matches files and directories only in the repository root.
 If the pattern doesn’t start with a slash, it matches files and directories in any directory or subdirectory.
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored. for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
