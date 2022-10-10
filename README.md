@@ -1,3 +1,4 @@
+----
 # How to write in Readme.md
 
 README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
@@ -12,12 +13,14 @@ README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on
 
 ***All this text is important***	All this text is important
 
+----
 
 # git-cheat-sheat
 
 To push your content to gihub....your local ssh key need to be stored at github ( can be located in ssh_keys menu of github). This will avoid typing you the github password again and again.
 (Hot to create a ssh-key, see [here](https://gist.github.com/surhudm/4b04da1682a15ded4c7a1a3da0514955))
 
+----
 
 **To create a new repository** 
 git init   
