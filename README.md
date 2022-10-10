@@ -1,12 +1,16 @@
 # How to write in Readme.md
+
 README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
+
 **This is bold text**	This is bold text
+
 *This text is italicized*	This text is italicized
+
 ~~This was mistaken text~~	This was mistaken text
+
 **This text is _extremely_ important**	This text is extremely important
+
 ***All this text is important***	All this text is important
-
-
 
 
 # git-cheat-sheat
