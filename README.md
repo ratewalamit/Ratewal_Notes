@@ -51,8 +51,15 @@ git push -u origin master     # will push master branch to the server
 ```shell
 git branch --move master main   #  will rename master to main
 #or 
-git branch -M main 
+#git branch -M main 
 ```
+## Version History
+
+* **old** versions of git:
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+*  **new** git versions:
+    * Initial Release
 
 in **old** versions of git:
 
