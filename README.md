@@ -101,9 +101,11 @@ git rm -rf --cahced .
 ```
 
 **Syncing changes**
+Imagine you(A) and your friend (B) cloned master branch of some project.
 
-imagine you(A) and your friend (B) cloned master branch of some project. 
-now you both made a branch from master of the main project. Your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.Now you want to pull changes made by him also along wiht your changes
+1. Now you both made a branch from master of the main project. 
+2. Your friend has done some changes in his branch and created a pull request and now his repo is merged with master branch of the main project.
+3. Now you want to pull changes made by him also along wiht your changes
 
 Steps:
 ```shell
