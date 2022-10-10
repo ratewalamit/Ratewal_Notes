@@ -46,8 +46,6 @@ Note:*Before pushing local changes to server you need to do git add and git comm
 git push -u origin master     # will push master branch to the server
 ```
 
-**Starting default branch as main**
-
 ```shell
 git branch --move master main   #  will rename master to main
 #or 
