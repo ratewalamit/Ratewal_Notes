@@ -22,7 +22,7 @@ git add -A           #  for all files
 git add sample.txt   #   to add specific files
 ```
 
-***(git reset for undo git add -A)***
+***Git reset***
 ```shell
 git reset    #for undo git add -A
 ```
@@ -40,7 +40,7 @@ git remote add origin git@github.com:ratewalamit/POWMES.git
 
 **Pushing local changes on remote server**
 
-*(Before pushing local changes to server you need to do git add and git commint )*
+Note:*Before pushing local changes to server you need to do git add and git commint* 
 
 ```shell
 git push -u origin master     # will push master branch to the server
@@ -72,7 +72,7 @@ git init -b main
 
 
 
-**Or push an existing repository from the command line**
+**Push an existing repository from the command line**
 ```shell
 git remote add origin git@github.com:ratewalamit/POWMES.git
 git branch -M main
@@ -86,7 +86,7 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 git branch -m master main 
 ```
 
-**Putting upper limit on files size**
+**Gitignore: Putting upper limit on files size **
 ```shell
 find . -size +45M >.gitignore
 ```
