@@ -23,11 +23,12 @@ To push your content to gihub....your local ssh key need to be stored at github 
 
 git init   
 
-# to delete a repository
+**To delete a repository**
 
 rm -rf .git
 
-# To add files for tracking
+**To add files for tracking**
+
 git add -A       \#for all files
 git add sample.txt   # to add specific files
 
