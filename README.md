@@ -26,7 +26,7 @@ git add sample.txt   #   to add specific files
 git reset    #for undo git add -A
 #remove already tacked file/folder but now in .gitignore
 #git rm --cached <filename>
-#git rm -rf --cahced .  
+#git rm -rf --cached .  
 #git rm -r --cached <foldername>
 ```
 
