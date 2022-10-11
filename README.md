@@ -17,9 +17,9 @@ rm -rf .git        #or rm -rf full_path_of_repo
 
 To delete a repo from local which is deleted from server
 
-    ```shell
-    git remote prune origin
-    ```
+```shell
+git remote prune origin
+```
 
 **To add files for tracking**
 ```shell
