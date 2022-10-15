@@ -114,9 +114,10 @@ Imagine you(A) and your friend (B) cloned master branch of some project.
 Steps:
 ```shell
     git checkout -b master 
-    git fetch origin master   #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
+    git pull origin master   #on completion of this step, your local  master is upto date wiht the changes pushed by your friend B
     git checkout -b <your branch>  #now you are on your local repo which you had created from clonned version of old master and you     have made changes in you repo.
     git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
+    #git push origin <feature_branch>   # in case you want to push changes to the origin/feature_branch you need to use --force
 ```
 <!--- 
 # How to write in Readme.md
