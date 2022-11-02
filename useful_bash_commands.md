@@ -10,6 +10,9 @@ sed "s#img_dir=./output#img_dir=./output_$shear#g; s/shear_value[[:blank:]]\{1,\
 **Reading line by line from a file**
 ```shell
 while IFS= read -r line; do     echo "$line"; done < doit.sh
+
+#or
+#cat do.sh|while read in;do echo $in ;done
 ```
 
 
