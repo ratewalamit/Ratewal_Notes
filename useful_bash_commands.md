@@ -15,6 +15,11 @@ while IFS= read -r line; do     echo "$line"; done < doit.sh
 #cat do.sh|while read in;do echo $in ;done
 ```
 
+**search and replace**
+```shell
+sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|grep -e "sim_name[[:blank:]]\{0,\}=[[:blank:]]\{0,\}galaxy_cosmo[0-9][0-9]0")/g" config_sim_galB.ini
+```
+
 
 
 
