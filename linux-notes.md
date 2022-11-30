@@ -454,4 +454,5 @@ LDFLAGS="`gsl-config --libs` -L/mnt/home/faculty/csurhud/libraries/lib/" CPPFLAG
 **pegasus hang**
 ```export DISPLAY=:1
 
-gnome-shell --replace```
+gnome-shell --replace
+```
