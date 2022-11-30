@@ -446,13 +446,15 @@ How to install boost:
 
 
 **installl softwaere with CPP and LDFlags**
-```load anaconda3 gcc-8.2.0 mpich-3.3.1 latex fftw-2.1.5 gsl-2.6
 
+```
+load anaconda3 gcc-8.2.0 mpich-3.3.1 latex fftw-2.1.5 gsl-2.6
 LDFLAGS="`gsl-config --libs` -L/mnt/home/faculty/csurhud/libraries/lib/" CPPFLAGS="`gsl-config --cflags` -I/mnt/home/faculty/csurhud/libraries/include" python setup.py install --prefix=install
 ```
 
 **pegasus hang**
-```export DISPLAY=:1
 
+```
+export DISPLAY=:1
 gnome-shell --replace
 ```
