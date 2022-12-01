@@ -110,7 +110,7 @@ Annalen der Physik,322(10):891-921.
 
 
 
-Symbols outside math mode:
+**Symbols outside math mode:**
 
 < >   \textless   \textgreater
 
