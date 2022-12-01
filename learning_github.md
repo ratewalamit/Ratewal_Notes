@@ -7,8 +7,17 @@ To push your content to gihub....your local ssh key need to be stored at github 
 
 **To create a new repository** 
 ```shell
-git init   
+git init  
+#git init amit       #will start repository wiht name amit
+
 ```
+**git branches**
+```
+git branch branch_name #creating a branch
+git checkout my_branch 
+```
+#make a branch with name my_branch(if it does not exist, if it exist it switches from curretn branch to my_branch branch )
+
 
 **To delete a repository**
 ```shell
@@ -119,6 +128,126 @@ Steps:
     git rebase master   #now your repo is upto date wiht the updted local repo(changes from master of B).
     #git push origin <feature_branch>   # in case you want to push changes to the origin/feature_branch you need to use --force
 ```
+
+
+
+
+
+git merge my_branch (merge my_branch to the branch I am working on. When I branched all files from parent got copied to my_branch . Now after this merge command extra files in my_branch will also get added to present working branch.(upto last commit of datughter branch)
+
+
+
+git rebase my_branch(will change commits to parent branch making us look daughter was never a branch))
+
+
+
+git remote add origin git @github.com:amitkiucaa:ggjklfalgd.git create a remote of name “origin ” of url(git@.....git)
+
+
+(Before pushing anything please add your public ssh key to your github account in order to be able to use push/pull)
+git push -u origin master(if fast forwarding wont lose history) (def of origin in above line , you can push to other branch also)
+git push --force origin master(forcefully merge will lose history)
+
+git push server_repo repository_name (server_repo: is deifned as git remote add server_repo <url_of_repo> i.e. analogus to origin
+(will push whatever is there in current working branch to url embadded in server_repo, with branch repository_name, if repository_name does not exist it will create it)
+git push server_repo repository_name:
+
+
+Note : if you cloned some repository :
+and now you want to commit changes to the repository
+first set your user identity ie
+git config --global user.email ratewalamit@gmail.com
+git config --global user.name  ratewalamit
+(remove –global to set identity to this repository only)
+
+otehrewise you wont be able to commit changes.
+
+
+
+git push --mirror https://github.com/exampleuser/new-repository.git #will push exact mirror image of the repository to the repository defined by the link
+
+
+	 	 	 	
+Git Push
+
+git push server_repo local_branch_name:server_branch_name
+
+	server_repo : contain url of the repository
+	if local_branch_name dont exist > will give error
+if server_branch_name dont exist > will create server_branch_name branch at server
+if both exist will paste local_bramch_name into serer_branch_name
+
+
+
+Git Merge
+
+
+Git pull
+
+
+git pull origin source_branch:desitanton_branch
+
+use --force to forcefull copy
+
+
+git pull --force origin new_branch2:master
+
+	 	 	 	
+git pull --force origin new_branch2:master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Git merge
+first ceckout to the branch where you want to merge( ie Master)
+now use:
+git merge bracnh_name     (it will merge branchname to Master)
+if there is any commin file in branch_name and master: it will be kept( If you merge updated copy of the file then it will simply replace updated copy with the orignal in master. But if in branchname there are come changes made,then you commited in branchname, now you have come to master made some changes and commited in master, now you want to merge , since in master the copy is updated one, hence it will raise some conflicts and ask u to address them.)
+if there are files in master not in branch_name : keep those as it is
+if there are files in branch_name not in master: would be copied to master
+(Note if there was a file present in both repo esrlier and it has been deleted in brach_name, on mergng exp to master this file in the master will also be deleted.)
+
+
+Now: if two branches ie master and exp are mergeed 
+and you make changes to master
+it will also be copied to exp
+now checkout to exp
+you will see new files from master in exp
+but now make chaneges in exp after checking out ie add 1 file
+now checkout back to master
+now make changes in master again 
+these new changes wont be there in exp agian since it was checked out earlier.
+
+
+
+
+
+
+
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+
+
+
+
+
+
+
 <!--- 
 # How to write in Readme.md
 
