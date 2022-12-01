@@ -72,21 +72,26 @@ iography}
 #bibliography
 ```
 
+**citatinos**
+```
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
 \setcitestyle{authoryear,open={(},close={)}}
-
-
+#
 \citet{Charles85}
 \citep{Charles85}
 
 
 \citep{Lacey93,Lacey94,Giocoli07}   # Lacay&Cole 1993,1994; Giocoli 2007
+ ```
+ 
+**bibliography**
+
+```
 \bibitem[Lacey \& Cole(1993)]{Lacey93}
 Lacey C., Cole S., 1993, MNRAS, 262, 627
 \bibitem[Lacey \& Cole(1994)]{Lacey94}
 Lacey C., Cole S., 1994, MNRAS, 271, 676
-
 
 
 \begin{thebibliography}{9}
@@ -98,12 +103,8 @@ bewegeter K {\"o}rper}.
 [\textbf{On electrodynaimics of moving objects}].
 Annalen der Physik,322(10):891-921.
 
-
-
-
-
 \end{thebibliography}
-
+```
 
 
 
@@ -117,9 +118,9 @@ Symbols outside math mode:
 
 
 
-writign equations 
+**writign equations** 
 
-
+```
 \begin{align*}
     \Large
     \Delta \Sigma (R)   \equiv \left\langle \gamma_t \right\rangle \Sigma_{crit}= \overline{\Sigma(<R)} -  \left\langle \Sigma(R)\right\rangle 
@@ -134,8 +135,7 @@ writign equations
  
  \overline{\Delta \Sigma}(R) = \frac{      \displaystyle\int  n(R_{\rm sat})  \Delta \Sigma(R|R_{\rm sat})  dR_{\rm sat}   }{ \displaystyle\int  n(R_{\rm sat})   dR_{\rm sat} }
    \vspace{1cm} 
-    
-    
+     
 \end{align*}\newline
-
+```
 
