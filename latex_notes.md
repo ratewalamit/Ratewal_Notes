@@ -1,15 +1,19 @@
 ﻿
-#insert figure
-
+ #Latex Notes
+ 
+ 
+ 
+**insert figure**
+```
 \begin{figure}[h!]       h! ensures figure at specific location
 \begin{center}
 
 \includegraphics[width=\linewidth,keepaspectratio]{history_of_universe.png}
 \end{center}
 \end{figure}
-
+```
 or    
-
+```
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{transparent}
@@ -27,12 +31,13 @@ or
         \transparent{0.7}\textcolor{white}{\rule{\paperwidth}{\paperheight}}
     }
 }
+```
 
 
 
+**figure and text side by side**
 
-#figure and text side by side
-
+```
 \documentclass{article}
 \usepackage{graphicx,wrapfig,lipsum}
 %------------------------------------------
@@ -54,19 +59,18 @@ Figure~\ref{wrap-fig:1} is a wrapped figure.
 \end{document}
 
 \noindent   for wrap figure text without indetation
+```
 
 
-
-#hpace 
+**hpace*
 
 hspace*{0.5cm}  for after newline spacing   
-
-
+```
 #newline
 \\[0.5cm]      newline after 0.5cm of vsapce
 iography}
 #bibliography
-
+```
 
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
