@@ -458,3 +458,18 @@ LDFLAGS="`gsl-config --libs` -L/mnt/home/faculty/csurhud/libraries/lib/" CPPFLAG
 export DISPLAY=:1
 gnome-shell --replace
 ```
+
+**Remote Jupyter Notebook**
+```
+ssh -L 8080:localhost:8080 camit@192.168.11.251
+```
+Run this command to forward local host to ip address.
+
+Run a jupter noteobook on this server.
+```
+jupyter-notebook --no-browser --port=8080
+```
+In your local browser:
+```
+localhost:8080/
+```
