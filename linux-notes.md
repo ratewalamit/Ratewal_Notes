@@ -478,7 +478,7 @@ localhost:8080/
 ```shell
 tmux new #to create new window
 tmux list-sessions #list all background tmux sessions
-tmux atach -t [\#]   #attach particular session running in background
+tmux atach -t [0-9]   #attach particular session running in background
 tmux detach #or ctrl+b d
 ```
 
