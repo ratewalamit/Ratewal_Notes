@@ -473,3 +473,12 @@ In your local browser:
 ```
 localhost:8080/
 ```
+
+**Tmux**
+```shell
+tmux new #to create new window
+tmux list-sessions #list all background tmux sessions
+tmux atach -t [\#]   #attach particular session running in background
+tmux detach #or ctrl+b d
+```
+
