@@ -16,8 +16,19 @@ while IFS= read -r line; do     echo "$line"; done < doit.sh
 ```
 
 **search and replace**
+using sed (replacing matched content wiht results from some other bash command)
 ```shell
 sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|grep -e "sim_name[[:blank:]]\{0,\}=[[:blank:]]\{0,\}galaxy_cosmo[0-9][0-9]0")/g" config_sim_galB.ini
+```
+
+**extract corresponding values from dictionary based on matching column**
+```
+dict_a={}
+for i in range(5):
+    dict_a[i]=i*2
+
+x=np.arange(3,6)
+x_square=np.array(list(dict_a.map,x))
 ```
 
 
