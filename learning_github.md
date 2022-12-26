@@ -110,8 +110,6 @@ If the pattern starts with a slash, it matches files and directories only in the
 If the pattern doesn’t start with a slash, it matches files and directories in any directory or subdirectory.
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored. for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
 
-
-
 **Syncing changes: git rebase**
 
 Imagine you(A) and your friend (B) cloned master branch of some project.
@@ -138,8 +136,6 @@ git merge my_branch (merge my_branch to the branch I am working on. When I branc
 
 
 git rebase my_branch(will change commits to parent branch making us look daughter was never a branch))
-
-
 
 git remote add origin git @github.com:amitkiucaa:ggjklfalgd.git create a remote of name “origin ” of url(git@.....git)
 
@@ -182,7 +178,24 @@ if both exist will paste local_bramch_name into serer_branch_name
 Git Merge
 
 
-Git pull
+
+**Syncing changes: git pull**
+Let us assume you have file1.py file2.py file3.py along with folder1/file1.py folder2/file1.py
+now you simply strat wiht adding origin to remote directory and let us see how fun stuff goes there
+
+```
+git push origin master   #will copy your local to origin
+```
+Now make a change in folder1/file1.py at local and push it. It will simply be pushed to remote.
+*Now make changes in folder1/file1.py at **remote**, try to push it. It will give an **error**. To **resolve** it, firt pull remote to local by* 
+```
+git pull origin master
+# git --set-upstream-to origin/master  #set this once to avoid writing origin master in pull statement repeatedly
+```
+
+
+
+Now if you have stopped tracking something on local, and delete it
 
 
 git pull origin source_branch:desitanton_branch
