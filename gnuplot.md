@@ -1,4 +1,4 @@
-#Important command in gnuplot
+## Important command in gnuplot
 
 **plotting multiplt files**
 ```shell
