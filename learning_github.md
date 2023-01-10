@@ -42,6 +42,9 @@ install first git LFS  #(download the package from website and install it)
 ```shell
 git lfs track "*.pdf"    #will track all pdf files even within subdirectories
 #git lfs track "myfolder/**"     to track specific folder and its content
+#git lfs track "**/myfolder/**"     to track specific folder anywhere in the directory and its content
+git lfs status # to see tracked file after setting up folder thracknig and git add after that.
+git lfs ls-files
 ```
 
 A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
