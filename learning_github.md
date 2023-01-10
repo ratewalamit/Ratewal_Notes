@@ -94,6 +94,13 @@ git branch -M main
 git push -u origin main
 ```
 
+**Use git LFS**
+install first git LFS  #(download the package from website and install it)
+```shell
+git lfs track "\*.pdf"    #will track all pdf files even within subdirectories
+#git lfs track "myfolder/**"     to track specific folder and its content
+```
+
 A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
 
 **To sync on gihub main branch**
@@ -253,8 +260,6 @@ git branch -d localBranchName
 
 // delete branch remotely
 git push origin --delete remoteBranchName
-
-
 
 
 
