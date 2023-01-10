@@ -4,12 +4,14 @@ To push your content to gihub....your local ssh key need to be stored at github 
 (Hot to create a ssh-key, see [here](https://gist.github.com/surhudm/4b04da1682a15ded4c7a1a3da0514955))
 
 ----
+----
 
 **To create a new repository** 
 ```shell
 git init  
 #git init amit       #will start repository wiht name amit
 
+----
 ```
 **git branches**
 ```
@@ -17,7 +19,7 @@ git branch branch_name #creating a branch
 git checkout my_branch 
 ```
 #make a branch with name my_branch(if it does not exist, if it exist it switches from curretn branch to my_branch branch )
-
+----
 
 **To delete a repository**
 ```shell
@@ -29,12 +31,22 @@ To delete a repo from local which is deleted from server
 ```shell
 git remote prune origin
 ```
-
+----
 **To add files for tracking**
 ```shell
 git add -A           #  for all files
 git add sample.txt   #   to add specific files
 ```
+*Use git **LFS** for tracking*
+install first git LFS  #(download the package from website and install it)
+```shell
+git lfs track "*.pdf"    #will track all pdf files even within subdirectories
+#git lfs track "myfolder/**"     to track specific folder and its content
+```
+
+A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
+
+----
 
 **Git reset: Remove added files to git only from local machine**
 ```shell
@@ -50,6 +62,7 @@ git reset    #for undo git add -A
 ```shell
 git commit -m "first commit"
 ```
+----
 
 **Add github url of the repository**
 
@@ -58,6 +71,7 @@ wiht some name of your choice i.e. 'origin'
 ```shell
 git remote add origin git@github.com:ratewalamit/POWMES.git
 ```
+----
 
 **Pushing local changes on remote server**
 
@@ -67,11 +81,17 @@ Note:  *Before pushing local changes to server you need to do git add and git co
 git push -u origin master     # will push master branch to the server
 ```
 
+----
+
 ```shell
 #git branch --move master main   #  will rename master to main
 #or 
 #git branch -M main 
 ```
+specifically useful if you made dirty commits in head branch. Commit and checkout to a new branch, then delete the old branch (git branch -D old_branch_name), then rename the new branch to old one. All the commints made to deleted branch will be lost.
+
+----
+
 Starting a new repository with name main
 
 * In **old** versions of git:
@@ -86,6 +106,8 @@ Starting a new repository with name main
     #git init --initial-branch=main
     git init -b main```
 
+----
+
 
 **Push an existing repository from the command line**
 ```shell
@@ -93,20 +115,14 @@ git remote add origin git@github.com:ratewalamit/POWMES.git
 git branch -M main
 git push -u origin main
 ```
+----
 
-**Use git LFS**
-install first git LFS  #(download the package from website and install it)
-```shell
-git lfs track "*.pdf"    #will track all pdf files even within subdirectories
-#git lfs track "myfolder/**"     to track specific folder and its content
-```
-
-A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
 
 **To sync on gihub main branch**
 ```shell
 git branch -m master main
 ```
+----
 
 **Gitignore: Putting upper limit on files size**
 ```shell
@@ -116,6 +132,8 @@ find . -size +45M >.gitignore
 If the pattern starts with a slash, it matches files and directories only in the repository root.
 If the pattern doesn’t start with a slash, it matches files and directories in any directory or subdirectory.
 If the pattern ends with a slash, it matches only directories. When a directory is ignored, all of its files and subdirectories are also ignored. for more: [click-here](https://linuxize.com/post/gitignore-ignoring-files-in-git/#:~:text=gitignore%20Patterns-,.,%5C%20\)%20to%20escape%20the%20character)
+
+----
 
 **Syncing changes: git rebase**
 
@@ -135,11 +153,7 @@ Steps:
 ```
 
 
-
-
-
 git merge my_branch (merge my_branch to the branch I am working on. When I branched all files from parent got copied to my_branch . Now after this merge command extra files in my_branch will also get added to present working branch.(upto last commit of datughter branch)
-
 
 
 git rebase my_branch(will change commits to parent branch making us look daughter was never a branch))
@@ -214,14 +228,6 @@ git pull --force origin new_branch2:master
 
 	 	 	 	
 git pull --force origin new_branch2:master
-
-
-
-
-
-
-
-
 
 
 
