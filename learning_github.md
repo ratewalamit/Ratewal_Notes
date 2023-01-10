@@ -97,7 +97,7 @@ git push -u origin main
 **Use git LFS**
 install first git LFS  #(download the package from website and install it)
 ```shell
-git lfs track "\*.pdf"    #will track all pdf files even within subdirectories
+git lfs track "*.pdf"    #will track all pdf files even within subdirectories
 #git lfs track "myfolder/**"     to track specific folder and its content
 ```
 
