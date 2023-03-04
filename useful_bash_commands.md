@@ -31,6 +31,11 @@ x=np.arange(3,6)
 x_square=np.array(list(dict_a.map,x))
 ```
 
+**tile pdf in rows vs columns**
+```shell
+pdfjam --nup 3x2  $(ls Corner_mass_disruption_*pdf -rt) --outfile row3.pdf
+#tile 6 pdfs in 3columns ,2 rows
+```
 
 
 
