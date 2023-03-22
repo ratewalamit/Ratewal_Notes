@@ -233,7 +233,25 @@ git pull --force origin new_branch2:master
 git pull --force origin new_branch2:master
 
 
+**Add comment to git .md file**
+```
+#all written below will be commented out in .md generated file
+<!--- 
 
+README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
+
+**This is bold text**	This is bold text
+
+*This text is italicized*	This text is italicized
+
+~~This was mistaken text~~	This was mistaken text
+
+**This text is _extremely_ important**	This text is extremely important
+
+***All this text is important***	All this text is important
+ --->
+
+```
 
 
 
@@ -269,6 +287,8 @@ git branch -d localBranchName
 
 // delete branch remotely
 git push origin --delete remoteBranchName
+
+
 
 
 
