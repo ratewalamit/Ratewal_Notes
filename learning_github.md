@@ -138,6 +138,17 @@ If the pattern ends with a slash, it matches only directories. When a directory 
 
 ----
 
+**Push changes from local to remote**
+```
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge testing      # to bring changes to local master from your develop branch
+git push origin master # push current HEAD to remote master branch
+```
+*To push your local branch to particular remtote branch*
+```#git push <remote> <local branch name>:<remote branch to push into>``` 
+
+
 **Syncing changes: git rebase**
 
 Imagine you(A) and your friend (B) cloned master branch of some project.
