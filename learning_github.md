@@ -233,6 +233,12 @@ git pull --force origin new_branch2:master
 git pull --force origin new_branch2:master
 
 
+**Remove/delete files created after last commit**
+```
+git clean -fd
+#It will remove the files affected after last commit
+```
+
 **Add comment to git .md file**
 ```
 #all written below will be commented out in .md generated file
