@@ -2,7 +2,7 @@
 ```
 sphinx-quickstart
 ```
-This will ask you some of arguments provied them concisely, and a **conf.py** will be created in your source folder(Please mind you are in one directory above source)
+This will ask you some of arguments provied them concisely, this will create a **Makefile** in your working directory, and a **conf.py** will be created in your source folder(Please mind you are in one directory above source)
 
 **Step2:** You’ll have to make a few changes to the file named conf.py. You should make sure that the extensions setting at least contains 'nbsphinx' eg
 ```
