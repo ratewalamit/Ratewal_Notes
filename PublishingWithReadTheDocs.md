@@ -1,10 +1,8 @@
-**Step1**: create your project with notebook files and .md files and put them in some folder say "source"
-
-**Now:** create ***conf.py*** with the following command 
+**Step1**: create your project with notebook files and .md files and put them in some folder say "source". Now run this command 
 ```
 sphinx-quickstart
 ```
-This will ask you some of arguments provied them concisely, and a conf.py will be created in your source folder(Please mind you are in one directory above source)
+This will ask you some of arguments provied them concisely, and a **conf.py** will be created in your source folder(Please mind you are in one directory above source)
 
 **Step2:** You’ll have to make a few changes to the file named conf.py. You should make sure that the extensions setting at least contains 'nbsphinx' eg
 ```
@@ -38,7 +36,7 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 ```
-
+Here source directory contains files wiht names "Cosmological_principle.ipynb,  Early_Universe.ipynb,  FRW_models.ipynb , Inhomogeneous_Universe.ipynb,  Introduction.ipynb,  Preface.ipynb"
 
 **Step3:** make with html
 ```
