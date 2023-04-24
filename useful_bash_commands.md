@@ -38,7 +38,20 @@ pdfjam --nup 3x2  $(ls Corner_mass_disruption_*pdf -rt) --outfile row3.pdf
 ```
 
 
+**Wget command over a list of urls saved in file**
+```shell
+while read -r url; do (qsub -N download_data -v url=$url  -o download_data_$(date '+%Y%m%d-%H%M%S')_$(echo $(basename -- "$url"))  download_call.sh);done <url_list.sh
+#only file name   $(echo $(FILE=$(basename -- "$url")|echo "${FILE%%.*}"))
 
+#cat download_call.sh
+#!/bin/bash
+#PBS -q intermediate
+#PBS -l nodes=1:ppn=1
+#PBS -j oe
+#PBS -l walltime=15:00:00
+module load anaconda3 gcc-8.2.0 mpich-3.3.1 latex fftw-2.1.5 gsl-2.6
+wget -x -nH   --no-check-certificate  $url -P $PWD
+```
 
 
 <!--- 
