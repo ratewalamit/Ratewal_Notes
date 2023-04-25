@@ -1,6 +1,8 @@
 
-**shell script are executed directly interpreted not compiled**
+**Shell script are executed directly interpreted not compiled**
+
 shell : A prtogram which takes command form keyboard and give it to os
+
 Cli command line interface
 
 terminal  : tool to send command to shell
