@@ -50,6 +50,11 @@ git lfs ls-files
 A local .gitignore file is usually placed in the repository’s root directory. However, you can create multiple .gitignore files in different subdirectories in your repository. The patterns in the .gitignore files are matched relative to the directory where the file resides.
 
 ----
+**Remove file from tracking/untrack a file**
+
+```
+git reset <file>
+```
 
 **Git reset: Remove added files to git only from local machine**
 ```shell
