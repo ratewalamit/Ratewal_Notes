@@ -55,7 +55,7 @@ wget -x -nH   --no-check-certificate  $url -P $PWD
 
 **Selecting specific nodes**
 
-```qsub -I -q advance -l host=hpc077```
+```qsub -I -q advance -l host=hpc077:ppn=1+hpc027:ppn=16```
 
 <!--- 
 # How to write in Readme.md
