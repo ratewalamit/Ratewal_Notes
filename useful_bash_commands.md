@@ -53,6 +53,9 @@ module load anaconda3 gcc-8.2.0 mpich-3.3.1 latex fftw-2.1.5 gsl-2.6
 wget -x -nH   --no-check-certificate  $url -P $PWD
 ```
 
+**Selecting specific nodes**
+
+```qsub -I -q advance -l host=hpc077```
 
 <!--- 
 # How to write in Readme.md
