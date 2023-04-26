@@ -32,3 +32,26 @@ command=f"wc -l {path_to_file}"
 cmd_result=subprocess.run(shlex.split(command),shell=False,text=True,check=True,capture_output=True) #shell=True : you give full command in double quotes
 print(cmd_result.stdout) #shell=False give command in list wiht elements in quotss ["wc", "-l"]
 ```
+
+## Using pandas dataframe
+```python
+def create_catalog(halos):
+    pddf = pd.DataFrame()
+    dtype_dict={}
+    colnames='ID DescID UPID Flags Uparent_Dist X Y Z VX VY VZ M V MP VMP R Rank1 Rank2 RA RARank SM ICL SFR Obs_SM Obs_SFR Obs_SSFR SM/HM obs_UV'.split()  #column names
+    missing_cols=[]
+    for i in colnames:
+        try:
+            pddf[i]=halos[f'{i.lower()}']
+            dtype_dict[i]=halos[f'{i.lower()}'].dtype
+        except:
+            missing_cols.append(i)
+            dtype_dict[i]=halos['pos'].dtype
+    if missing_cols==   ['X', 'Y', 'Z', 'VX', 'VY', 'VZ', 'Obs_SSFR', 'SM/HM']:
+        pddf[['X', 'Y', 'Z', 'VX', 'VY', 'VZ']]=pd.DataFrame(halos['pos'])
+        pddf['Obs_SSFR']=pddf.Obs_SFR.values/pddf.Obs_SM.values
+        pddf['SM/HM']=0
+    pddf=pddf.astype(dtype_dict)
+    return pddf
+```
+
