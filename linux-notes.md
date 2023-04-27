@@ -242,9 +242,9 @@ head file1name file2name     10 lines for both files
 ### find/locate
 
 ```
-#find is used for finding file in diretory hiererhy
-find seachdirectory -name  filename/directoryname
-find searchdirectory -name *.txt
+#find is used for finding file in diretory hiererhy, it can even find files newer than a mentioned file
+find seachdirectory -name  'filename/directoryname'
+find searchdirectory -name '*.txt'
 find searchdirectory -mtime -5    seach files which were created within last 5 days
 
 locate -b  *creat*fits*.py      # -b for case insensitive
