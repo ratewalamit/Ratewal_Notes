@@ -255,6 +255,15 @@ git clean -fd
 #It will remove the files affected after last commit
 ```
 
+**Using tokens for github authentications**
+First generate a token with some rights(atlest repo rights)
+```
+git remote remove origin
+git remote add origin https://[TOKEN]@github.com/[REPO-OWNER]/[REPO-NAME]
+git push
+```
+
+
 **Add comment to git .md file**
 ```
 #all written below will be commented out in .md generated file
