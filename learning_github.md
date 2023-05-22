@@ -255,6 +255,13 @@ git clean -fd
 #It will remove the files affected after last commit
 ```
 
+**Remove/delete branch created along with its files(even if you have made any commit on new branch) **
+```
+git branch -D branchmname      #mind the capital D...it deletes the files
+#It will remove the files affected after last commit
+```
+
+
 **Using tokens for github authentications**
 First generate a token with some rights(atlest repo rights)
 ```
