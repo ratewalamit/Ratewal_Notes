@@ -257,6 +257,7 @@ git clean -fd
 
 **Remove/delete branch created along with its files(even if you have made any commit on new branch) **
 ```
+git branch -d branchmname      #deletes branch without deleting files...files will move to parent branch if new branch deleted
 git branch -D branchmname      #mind the capital D...it deletes the files
 #It will remove the files affected after last commit
 ```
