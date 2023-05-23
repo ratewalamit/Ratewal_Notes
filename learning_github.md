@@ -17,8 +17,8 @@ git init
 ```
 git branch branch_name #creating a branch
 git checkout my_branch 
-```
 #make a branch with name my_branch(if it does not exist, if it exist it switches from curretn branch to my_branch branch )
+```
 ----
 
 **To delete a repository**
@@ -258,23 +258,13 @@ git pull origin master
 # git --set-upstream-to origin/master  #set this once to avoid writing origin master in pull statement repeatedly
 ```
 
-
-
 Now if you have stopped tracking something on local, and delete it
-
-
 git pull origin source_branch:desitanton_branch
-
 use --force to forcefull copy
-
-
+```
+git pull --force origin new_branch2:master	 	 	 
 git pull --force origin new_branch2:master
-
-	 	 	 	
-git pull --force origin new_branch2:master
-
-
-
+```
 
 
 **Using tokens for github authentications**
@@ -286,29 +276,9 @@ git push
 ```
 
 
-**Add comment to git .md file**
-```
-#all written below will be commented out in .md generated file
-<!--- 
-
-README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
-
-**This is bold text**	This is bold text
-
-*This text is italicized*	This text is italicized
-
-~~This was mistaken text~~	This was mistaken text
-
-**This text is _extremely_ important**	This text is extremely important
-
-***All this text is important***	All this text is important
- --->
-
-```
 
 
-
-Git merge
+**Git merge**
 first ceckout to the branch where you want to merge( ie Master)
 now use:
 git merge bracnh_name     (it will merge branchname to Master)
@@ -330,17 +300,25 @@ these new changes wont be there in exp agian since it was checked out earlier.
 
 
 
+**Add comment to git .md file**
+```
+#all written below will be commented out in .md generated file
+<!--- 
 
+README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
 
+**This is bold text**	This is bold text
 
+*This text is italicized*	This text is italicized
 
+~~This was mistaken text~~	This was mistaken text
 
-// delete branch locally
-git branch -d localBranchName
+**This text is _extremely_ important**	This text is extremely important
 
-// delete branch remotely
-git push origin --delete remoteBranchName
+***All this text is important***	All this text is important
+ --->
 
+```
 
 
 
