@@ -26,11 +26,29 @@ git checkout my_branch
 rm -rf .git        #or rm -rf full_path_of_repo
 ```
 
-To delete a repo from local which is deleted from server
+
+**Remove/delete a local/remote  branch**
 
 ```shell
+#Remove/delete branch created along with its files(even if you have made any commit on new branch)
+git branch -d branchmname      #deletes branch without deleting files...files will move to parent branch if new branch deleted
+git branch -D branchmname      #mind the capital D...it deletes the files
+
+#deleting a remote branch
+git push -d <remote_name> <branchname>   #**Note:** In most cases, `<remote_name>` will be `origin`.
+
+
+#To delete a repo from local which is deleted from server
 git remote prune origin
+
+#To delete the ***local*** branch, use one of the following:
+git branch -d <branch_name>    #- The `-d` option is an alias for `--delete`, which only deletes the branch if it has already been fully merged in its upstream branch.
+
+git branch -D <branch_name>  #- The `-D` option is an alias for `--delete --force`, which deletes the branch "irrespective of its merged status." [Source: `man git-branch`]
+
+#Note: You will receive an error if you try to delete the currently selected branch.
 ```
+
 ----
 **To add files for tracking**
 ```shell
@@ -55,6 +73,13 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 ```
 git reset <file>
 ```
+
+**Remove/delete files created after last commit**
+```
+git clean -fd
+#It will remove the files affected after last commit
+```
+
 
 **Git reset: Remove added files to git only from local machine**
 ```shell
@@ -249,18 +274,7 @@ git pull --force origin new_branch2:master
 git pull --force origin new_branch2:master
 
 
-**Remove/delete files created after last commit**
-```
-git clean -fd
-#It will remove the files affected after last commit
-```
 
-**Remove/delete branch created along with its files(even if you have made any commit on new branch) **
-```
-git branch -d branchmname      #deletes branch without deleting files...files will move to parent branch if new branch deleted
-git branch -D branchmname      #mind the capital D...it deletes the files
-#It will remove the files affected after last commit
-```
 
 
 **Using tokens for github authentications**
