@@ -73,6 +73,12 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 ```
 git reset <file>
 ```
+**Untrack**  *if the file is already tracked and more commits were made after that commit too*
+```shell
+git filter-repo --invert-paths --force --path test_table.fits 
+git push --force
+#python3 -m pip install --user git-filter-repo   #to install git-filter-repo
+```
 
 **Remove/delete files created after last commit**
 ```
