@@ -55,3 +55,19 @@ def create_catalog(halos):
     return pddf
 ```
 
+## Using Dictionsary 
+```shell
+dict_mass={}
+mass_cat=fits.open('file1.fits')[1].data
+st_mass=mass_cat["stellar_mass"]
+for ie,obid in enumerate(mass_cat["object_id"]):
+    dict_mass[obid]=st_mass[ie]
+
+for fname in glob.glob("file2*.fits"):
+    hdulist = fits.open(fname)
+    data = hdulist[1].data
+    zredt = data["mizuki_photoz_best"]
+    obj_id=data['object_id']
+    mstelt=np.array(list(map(dict_mass.get, obj_id)))
+
+```
