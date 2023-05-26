@@ -103,6 +103,12 @@ git commit -m "first commit"
 ```
 ----
 
+**History of a file**
+```
+git log -p -- <filename>
+#there is sapce after --
+```
+
 **Add github url of the repository**
 
 wiht some name of your choice i.e. 'origin'
