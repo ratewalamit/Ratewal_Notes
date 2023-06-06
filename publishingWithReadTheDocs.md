@@ -59,8 +59,12 @@ nbsphinx
 
 ```
 
+
 **To server locally** 
 give path from where to sever site
 ```
+#first install dependencies in requrirement.txt
+pip install -r requirement.txt
+#
 http-server -o ./build/html/
 ```
