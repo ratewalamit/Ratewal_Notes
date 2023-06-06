@@ -39,6 +39,9 @@ git push -d <remote_name> <branchname>   #**Note:** In most cases, `<remote_name
 
 
 #To delete a repo from local which is deleted from server
+git push origin -d deploy  #after deleing deploy from local, deleting from server also 
+
+#To clean all the local tracking for deleted branches 
 git remote prune origin
 
 #To delete the ***local*** branch, use one of the following:
