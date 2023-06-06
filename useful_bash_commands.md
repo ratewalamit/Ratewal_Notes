@@ -4,6 +4,13 @@ for i in 9.0,10.25 10.25,10.6 10.6,11.5; do (  IFS=",";set -- $i;mmin=$1;mmax=$2
 ```
 **search and replace**
 ```shell
+#search and relace a text from all files
+find . -type f -exec sed -i 's/from/to/' {} \;
+
+#using sed (replacing matched content wiht results from some other bash command)
+sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|grep -e "sim_name[[:blank:]]\{0,\}=[[:blank:]]\{0,\}galaxy_cosmo[0-9][0-9]0")/g" config_sim_galB.ini
+
+#search and replace with patterns
 sed "s#img_dir=./output#img_dir=./output_$shear#g; s/shear_value[[:blank:]]\{1,\}=[[:blank:]]\{1,\} [0-9].[0-9][0-9]/shear_value = $shear/g" $dirfpfs/examples/config_sim_gal.ini  > $dirfpfs/examples/tmp_configs/tmp_config_sim_gal.ini
 ```
 
@@ -15,11 +22,6 @@ while IFS= read -r line; do     echo "$line"; done < doit.sh
 #cat do.sh|while read in;do echo $in ;done
 ```
 
-**search and replace**
-using sed (replacing matched content wiht results from some other bash command)
-```shell
-sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|grep -e "sim_name[[:blank:]]\{0,\}=[[:blank:]]\{0,\}galaxy_cosmo[0-9][0-9]0")/g" config_sim_galB.ini
-```
 
 **extract corresponding values from dictionary based on matching column**
 ```
