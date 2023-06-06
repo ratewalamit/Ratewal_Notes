@@ -39,6 +39,7 @@ Indices and tables
 Here source directory contains files wiht names "Cosmological_principle.ipynb,  Early_Universe.ipynb,  FRW_models.ipynb , Inhomogeneous_Universe.ipynb,  Introduction.ipynb,  Preface.ipynb"
 
 **Step3:** make with html
+(run this step after every change)
 ```
 make html
 ```
@@ -58,3 +59,8 @@ nbsphinx
 
 ```
 
+**To server locally** 
+give path from where to sever site
+```
+http-server -o ./build/html/
+```
