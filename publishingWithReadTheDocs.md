@@ -51,4 +51,10 @@ sphinx>=1.4
 ipykernel
 nbsphinx
 ```
+**Step5** Change the default theme
+(make appropriate change in conf.py in theme section)
+```
+ pip install sphinx_rtd_theme
+
+```
 
