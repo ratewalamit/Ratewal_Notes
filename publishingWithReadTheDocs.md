@@ -11,6 +11,22 @@ extensions = [
 ]
 ```
 
+**Step 2a** Change the build folder to ***docs*** in Makefile as well as make.bat, please mind the default folder is _build. 
+
+**Step 2b** Make these changes to conf.py to use particular theme and increase widht of the frame
+
+```shell
+html_theme = 'sphinx_rtd_theme'
+html_static_path = ['_static']
+nbsphinx_allow_errors = True
+html_theme_options = {
+  'content_fixed': True,
+  'content_width': '1200px',
+}
+```
+**Step 2c** add a file wiht name ".nojekyll" without any content in docs folder to stop using jekyll
+
+
 
 **Step3**: Once your conf.py is in place, edit the file named source/index.rst and add the file names of your notebooks (without the .ipynb extension) to the toctree directive. For an example, 
 ```shell
@@ -44,6 +60,13 @@ Here source directory contains files wiht names "Cosmological_principle.ipynb,  
 make html
 ```
 this will create a folder wiht your website. You can run this website on your local machine.
+
+**Step3a** the docs folder containt doctree and html, not index.html, hence create a index.html wiht 
+```
+<meta http-equiv="refresh" content="0; url=./html/index.html" />
+```
+This links index.html to ./html/index.html
+
 
 **Step4:** To publish on ReadTheDocs *make a file requirement.txt* with the following content and **specify** its location (ie ./requirement.txt) in advanced
 tab under 'Admin' menu after importing your project in ReadTheDocs
