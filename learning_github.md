@@ -192,8 +192,9 @@ git push origin master # push current HEAD to remote master branch
 
 
 **Deploy from a particular folder**
-```
-#Deploy from html folder to deploy branch...on local deploy branch has lot more data than remote branch which will contain only content of html folder
+
+```shell
+# Deploy from html folder to deploy branch...on local deploy branch has lot more data than remote branch which will contain only content of html folder
 git subtree push  --prefix build/html origin deploy  
 ```
 
