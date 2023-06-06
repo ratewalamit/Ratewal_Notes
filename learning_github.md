@@ -191,6 +191,13 @@ git push origin master # push current HEAD to remote master branch
 ```#git push <remote> <local branch name>:<remote branch to push into>``` 
 
 
+**Deploy from a particular folder**
+```
+#Deploy from html folder to deploy branch...on local deploy branch has lot more data than remote branch which will contain only content of html folder
+git subtree push  --prefix build/html origin deploy  
+```
+
+
 **Syncing changes: git rebase**
 
 Imagine you(A) and your friend (B) cloned master branch of some project.
