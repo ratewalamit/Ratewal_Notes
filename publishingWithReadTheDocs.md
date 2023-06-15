@@ -2,9 +2,9 @@
 ```
 sphinx-quickstart
 ```
-This will ask you some of arguments provied them concisely, this will create a **Makefile** in your working directory, and a **conf.py** will be created in your source folder(Please mind you are in one directory above source)
+This will ask you some of the arguments provided them concisely, this will create a **Makefile** in your working directory, and a **conf.py** will be created in your source folder(Please mind you are in one directory above source)
 
-**Step2:** You’ll have to make a few changes to the file named conf.py. You should make sure that the extensions setting at least contains 'nbsphinx' eg
+**Step 2:** You’ll have to make a few changes to the file named conf.py. You should make sure that the extensions setting at least contains 'nbsphinx' eg
 ```
 extensions = [
     'nbsphinx',
@@ -13,7 +13,7 @@ extensions = [
 
 **Step 2a** Change the build folder to ***docs*** in Makefile as well as make.bat, please mind the default folder is _build. 
 
-**Step 2b** Make these changes to conf.py to use particular theme and increase widht of the frame
+**Step 2b** Make these changes to conf.py to use the particular theme and increase width of the frame
 
 ```shell
 html_theme = 'sphinx_rtd_theme'
@@ -24,11 +24,11 @@ html_theme_options = {
   'content_width': '1200px',
 }
 ```
-**Step 2c** add a file wiht name ".nojekyll" without any content in docs folder to stop using jekyll
+**Step 2c** **Add a file with the name ".nojekyll"** without any content in the docs folder to stop using Jekyll.
 
 
 
-**Step3**: Once your conf.py is in place, edit the file named source/index.rst and add the file names of your notebooks (without the .ipynb extension) to the toctree directive. For an example, 
+**Step 3**: Once your conf.py is in place, edit the file named source/index.rst and add the file names of your notebooks (without the .ipynb extension) to the toctree directive. For example, 
 ```shell
 
 Welcome to Cosmology MSc course's documentation!
