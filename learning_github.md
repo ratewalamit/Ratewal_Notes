@@ -290,7 +290,7 @@ git pull --force origin new_branch2:master
 ```
 
 
-**Using tokens for github authentications**
+**Using tokens for github authentications**(Better is using ssh keys, see below)
 First generate a token with some rights(atlest repo rights)
 ```
 git remote remove origin
@@ -298,7 +298,21 @@ git remote add origin https://[TOKEN]@github.com/[REPO-OWNER]/[REPO-NAME]
 git push
 ```
 
+**Using ssh-keys for github authentications**
 
+Edit your local ~/.ssh/config
+```
+Host your_github_username
+    Hostname github.com
+    IdentityFile ~/.ssh/id_rsa.github
+    #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
+```
+Modify the remote origin
+```
+git remote remove origin
+git remote add origin git@github.com:your_github_username/repository_name.git
+git push
+```
 
 
 **Git merge**
