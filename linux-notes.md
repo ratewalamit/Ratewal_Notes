@@ -111,6 +111,8 @@ To avoid password authentication in it, add id_pub of local to the ./ssh/authori
 ```
 #scp source dest
 scp amti.txt username@ipaddress:/home/username/
+#in python
+!scp source_file {os.environ["os_variable_name"]}/
 ```
 
 
