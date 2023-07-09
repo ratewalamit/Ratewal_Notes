@@ -106,6 +106,14 @@ cp  -R dir1 di3      copy directory1 content to   directory3   if directory3 doe
 cp -R dir1 dir3       copy directory1 inside directory3 if directory 3 alredy exist
 cp  -R ~/Desktop/111/.  222  copy content of 111 in 222(    . at end of 111 includes hidden files also)
 ```
+### Server copy
+To avoid password authentication in it, add id_pub of local to the ./ssh/authorized_keys on remote system
+```
+#scp source dest
+scp amti.txt username@ipaddress:/home/username/
+```
+
+
 
 
 ### Rsync
