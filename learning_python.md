@@ -55,6 +55,13 @@ def create_catalog(halos):
     return pddf
 ```
 
+## Replacing particular cell value in pandas
+```python
+ hh['galID'].mask(hh['galID'] == 5, 6, inplace=True)
+#syntax: df[‘column_name’].mask( df[‘column_name’] == ‘some_value’, value , inplace=True )
+
+```
+
 ## Using Dictionsary 
 ```shell
 dict_mass={}
