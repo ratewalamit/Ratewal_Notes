@@ -78,3 +78,58 @@ for fname in glob.glob("file2*.fits"):
     mstelt=np.array(list(map(dict_mass.get, obj_id)))
 
 ```
+
+
+## Using Subplots
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=np.arange(10)
+y=x+2
+
+#subplot If you want to create a single plot in the whole figure,differnece will be visible on saving the figure
+plot1=plt.subplot(1,2,1)
+plot1.plot(x,y)
+
+#if you want to create the second plot also in the figure
+plot2=plt.subplot(211)
+plot2.plot(x,y)
+
+
+#subplots   #create multiple plots in the figure
+fig,axes=plt.subplots(2,2)
+axes[0,0].plot(x,y)
+axes[0,0].plot(x,y+2)
+axes[1,1].plot(x,x+y)
+
+```
+
+## Using 3d Plots
+```python
+#signle 3d plot
+ax=plt.axes(projection="3d")
+ax.plot(x,y,z)
+ax.scatter(x,y,z)
+
+#multiple 3d plots
+plot1=plt.subplot(2,2,1,projection="3d")
+plot1.scatter(x,y,z)
+
+plot2=plt.subplot(2,2,2)
+plot2.scatter(x,y)
+
+plot3=plt.subplot(2,2,3,projection="3d")
+X,Y=np.meshgrid(x,y)
+Z=X**2+Y**2
+plot3.scatter(X,Y,Z)
+
+plot4=plt.subplot(2,2,4,projection="3d")
+X,Y=np.meshgrid(x,y)
+Z=X**2+Y**2
+plot4.plot_surface(X,Y,Z)
+
+
+```
+
+
