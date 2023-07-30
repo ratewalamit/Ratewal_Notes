@@ -133,3 +133,36 @@ plot4.plot_surface(X,Y,Z)
 ```
 
 
+
+## Changing dirctory
+```python
+import os
+import pathlib.Path as PATH
+base_path=str(PATH.home())
+os.chdir(f"{base_path}/some_folder")
+````
+
+
+## Python if else block in one line
+```python
+if <expression>: <perform_action_01>; <perform_action_02>; <perform_action_03>   #aprart from 1,it wont perform 2,3 also if expression is false
+#or
+ <perform_action_01> if <expression> else <perform_action_02>
+```
+
+
+
+## Using system command in python
+```python
+#use of os.system is not recommended since it reflects changes on the terminal
+if 0!=os.system("complicated command to be executed"): print("Command executed with error")   #check the output status only   #recommended to change directory
+if 0!=os.system("complicated command to be executed   >>/dev/null 2>&1 "): print("Command executed with error")     #to hide the output
+
+#Recommended subprocess.run
+result=subprocess.run("wc -l a.py",shell=True,text=True,capture_output=True)    #shell =True uses bash to do computation, capture_outpute skips output printing
+result=subprocess.run("wc -l a.py".split(),shell=False,text=True,capture_output=True) #shall =False skip use of bash
+#remember when you dont use shell =true, you need to pass the command as a combination of strings, whereas  shell=True, 
+result=subprocess.run("ls -l  |wc -l",shell=True,text=True,capture_output=True) #use complicated command with shell=True
+#Note It will cause problems in using cd command since it uses cd in the subprocess only, not in the actual terminal directory
+```
+
