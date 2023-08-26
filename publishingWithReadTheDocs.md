@@ -89,5 +89,11 @@ give path from where to sever site
 #first install dependencies in requrirement.txt
 pip install -r requirement.txt
 #
+#**Now install http-server using**
+npm install --global http-server
+#
 http-server -o ./build/html/
 ```
+
+
+**Apperantly only a particlar version of jupyter notebook support simple copy pasting in different tab with ctrl+c/v: pip install notebook==5.1.0rc2**
