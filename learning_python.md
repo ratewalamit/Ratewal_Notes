@@ -165,4 +165,22 @@ result=subprocess.run("wc -l a.py".split(),shell=False,text=True,capture_output=
 result=subprocess.run("ls -l  |wc -l",shell=True,text=True,capture_output=True) #use complicated command with shell=True
 #Note It will cause problems in using cd command since it uses cd in the subprocess only, not in the actual terminal directory
 ```
+## Formatting grid and ticks in plots
+```python
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+from matplotlib.ticker import ScalarFormatter
+
+fig=plt.figure(figsize=(10,10))
+ax=plt.subplot(221)
+ax.grid(visible=True,axis="y", which='major', linestyle='--',alpha=0.5)
+ax.grid(visible=True,axis="y", which='minor', linestyle='--',alpha=0.2)
+ax.grid(visible=True,axis="x", which='major', linestyle='--',alpha=0.2)
+ax.grid(visible=True,axis="x", which='minor', linestyle='--',alpha=0.5)
+ax.tick_params( which='minor',left=True,labelright=False)
+#ax.yaxis.set_minor_formatter(ScalarFormatter())
+#ax.yaxis.set_major_formatter(ScalarFormatter())
+ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+ax.yaxis.set_minor_locator(MaxNLocator(integer=True))
+```
 
