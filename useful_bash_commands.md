@@ -59,6 +59,38 @@ wget -x -nH   --no-check-certificate  $url -P $PWD
 
 ```qsub -I -q advance -l host=hpc077:ppn=1+hpc027:ppn=16```
 
+
+**passing arguments**
+while getopts b:a:f: flag
+do
+    case "${flag}" in
+        u) username=${OPTARG};;
+        a) age=${OPTARG};;
+        f) fullname=${OPTARG};;
+    esac
+done
+echo "Username: $username";
+echo "Age: $age";
+echo "Full Name: $fullname";
+
+**Find command**
+#find .  -path "*/foldername/*.dat"
+#find . -name "*.dat"|while read fname
+#find folder/folder_ -path "*/0.?_0.?/*.dat"|while read fname
+#find folder/folder_ -path "*/folder/*.dat"|while read fname
+find folder/folder_  \( -path "*/folder/*.dat" -o -path "*/0.?_0.?/*.dat" \)|while read fname
+do
+echo $(awk '{print $8 "  " $6 "  " $14 "  "$15  }' $fname > tmp.dat)  
+sed 's/from/to/' tmp.dat > tmp2.dat
+sleep 0.1
+filename=$(realpath $fname)
+echo $(mv tmp2.dat $filename)
+echo $(ls $filename)
+done
+echo $(rm tmp.dat)
+
+
+
 <!--- 
 # How to write in Readme.md
 
@@ -69,6 +101,10 @@ README.md writing sytle [help](https://docs.github.com/en/get-started/writing-on
 *This text is italicized*	This text is italicized
 
 ~~This was mistaken text~~	This was mistaken text
+
+
+
+
 
 **This text is _extremely_ important**	This text is extremely important
 
