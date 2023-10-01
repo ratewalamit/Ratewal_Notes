@@ -61,6 +61,7 @@ wget -x -nH   --no-check-certificate  $url -P $PWD
 
 
 **passing arguments**
+```shell
 while getopts b:a:f: flag
 do
     case "${flag}" in
@@ -72,8 +73,10 @@ done
 echo "Username: $username";
 echo "Age: $age";
 echo "Full Name: $fullname";
+```
 
 **Find command**
+```shell
 #find .  -path "*/foldername/*.dat"
 #find . -name "*.dat"|while read fname
 #find folder/folder_ -path "*/0.?_0.?/*.dat"|while read fname
@@ -88,7 +91,7 @@ echo $(mv tmp2.dat $filename)
 echo $(ls $filename)
 done
 echo $(rm tmp.dat)
-
+```
 
 
 <!--- 
