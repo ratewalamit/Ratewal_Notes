@@ -12,7 +12,12 @@ sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|gr
 
 #search and replace with patterns
 sed "s#img_dir=./output#img_dir=./output_$shear#g; s/shear_value[[:blank:]]\{1,\}=[[:blank:]]\{1,\} [0-9].[0-9][0-9]/shear_value = $shear/g" $dirfpfs/examples/config_sim_gal.ini  > $dirfpfs/examples/tmp_configs/tmp_config_sim_gal.ini
-```
+
+#search and replace multi line pattern
+perl -0777  -pe 's#rbin: 20\nrmax: 5\nrmin: 0.01#rbin: 30\nrmax: 10\nrmin: 0.05#g' am.config > am2.config
+perl -0777 -i -pe 's#rbin: 20\nrmax: 5\nrmin: 0.01#rbin: 30\nrmax: 10\nrmin: 0.05#g' am.config   #save changes in the same file 
+
+````
 
 **Reading line by line from a file**
 ```shell
