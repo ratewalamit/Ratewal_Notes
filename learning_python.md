@@ -184,3 +184,16 @@ ax.yaxis.set_major_locator(MaxNLocator(integer=True))
 ax.yaxis.set_minor_locator(MaxNLocator(integer=True))
 ```
 
+## Putting text in figure with ax.transform
+```python
+#without using subplots 
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = plt.axes()
+ax.text(0.5, 0.5, "Hello, World!", transform=ax.transAxes)
+
+#using subplots
+fig, ax = plt.subplots()
+ax.text(0.5, 0.5, "Hello, World!", transform=ax.transAxes)
+plt.show()
+```
