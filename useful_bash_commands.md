@@ -97,6 +97,15 @@ echo $(ls $filename)
 done
 echo $(rm tmp.dat)
 ```
+**exec command**
+```shell
+find .  -type f -name "*.dat*" -exec grep -HL '#OK R2selnbias is already applied' '{}' ';'
+# . from where to start look from, it will also look into subdirectories also
+# '{}' is output of find command
+# ';' is necessary to process each output of find command
+# -L argument to grep invert the grep result, means files without matching the pattern will be output
+# -H will give names of files of ouput of grep, likewise -n gives line numbers
+```
 
 
 <!--- 
