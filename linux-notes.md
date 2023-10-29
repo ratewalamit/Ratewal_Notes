@@ -442,3 +442,10 @@ tmux atach -t [0-9]   #attach particular session running in background
 tmux detach #or ctrl+b d
 ```
 
+**Hotspot**
+```shell
+#create wifi hotspot for better sequrity #dont use gui
+nmcli connection down Hotspot
+nmcli connection modify Hotspot 802-11-wireless-security.key-mgmt sae
+nmcli connection up Hotspot
+```
