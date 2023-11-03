@@ -129,6 +129,7 @@ rsync -r                              #will copy directiores and their content
 rysnc -a                             #will do same as -r but will also copy symlinks and preserve group user perimssions
 rsync -a  --dry-run             # to see what will be copide
 rysnc -a  --delete –dry-run    #to dry run to find it will  mirror source and dest but
+rsync -t                       #keep time stapmp
 rsync  -zaP                   #z for archive P for progress
 rsync       soucrce      server_destination
 rsync -u   #update
@@ -139,6 +140,7 @@ rsync -azvP   --include={"*/","*.py","*.dat","*.txt"} --exclude="*"   /home/amit
 rsync -azvP  --exclude={"*.py","*.dat"}  /home/amit/Desktop/test_local/ Desktop/tt #will include only pythonand dat files excluding all
 #or
 rsync -azvP  --include={"*"} --exclude={"*.py","*.dat"}    /home/amit/Desktop/test_local/ Desktop/tt/             #will exclude only py ad dat files from all directories and subdirectories 
+
 #both commands above are equavalent
 ```
 
