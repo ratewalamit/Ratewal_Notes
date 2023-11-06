@@ -4,7 +4,37 @@ To push your content to gihub....your local ssh key need to be stored at github 
 (Hot to create a ssh-key, see [here](https://gist.github.com/surhudm/4b04da1682a15ded4c7a1a3da0514955))
 
 ----
+
 ----
+## A sample global gitconfig file ~/.gitconfig
+```shell
+[user]
+    email = ratewalamit@gmail.com
+    name = ratewalamit
+[core]
+    excludesFile = /mnt/home/student/camit/.gitignore
+    askPass =
+[push]
+    default = matching
+[init]
+    defaultBranch = main
+[credential "https://lsst-sqre-prod-git-lfs.s3-us-west-2.amazonaws.com"]
+    helper = store
+[credential "https://s3.lsst.codes"]
+    helper = store
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+```
+----
+----
+
 
 **To create a new repository** 
 ```shell
