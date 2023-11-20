@@ -88,6 +88,7 @@ git branch -D <branch_name>  #- The `-D` option is an alias for `--delete --forc
 git add -A           #  for all files
 git add sample.txt   #   to add specific files
 ```
+
 *Use git **LFS** for tracking*
 install first git LFS  #(download the package from website and install it)
 ```shell
@@ -104,6 +105,7 @@ A local .gitignore file is usually placed in the repository’s root directory. 
 **Remove file from tracking/untrack a file**
 
 ```
+git restore --staged file.txt  (undo git add for this file)
 git reset <file>
 ```
 **Untrack**  *if the file is already tracked and more commits were made after that commit too*
@@ -115,10 +117,41 @@ git push --force
 
 **Remove/delete files created after last commit**
 ```
-git clean -fd
-#It will remove the files affected after last commit
+git clean -fd   #don't ever use it
+#It will remove the files(possible untarckted also) affected after last commit
 ```
 
+
+**Git restore vs reset**
+```shell
+#restore is a newer feature compared to reset
+
+#Discarding local changes
+git restore file.js # Copies file.js from index to working directory
+#it will undo changes in file.js made after git add to this file.
+
+git restore --staged file.js # remove it from tracked files or Unstaging files (undoing git add)
+#Now you cant undo your local changes, since git dont know any index of file.js with respect to which it could restore the file.
+
+
+git restore . # Discards all local changes made after last git add (except untracked files)
+Restoring an earlier version of a file
+git restore ——source=HEAD~2 file.js
+#
+git reset file.txt 
+#will simply wont affect your working copy, but will remove it from tracked file
+```
+
+**Git clean**
+```
+#affect only untracked files/folders
+git clean -xnd    #x  will effecte executable files, n for files, d for directiries
+#The above command will result to a warning,that whis operation will remove which files or directories
+if you wish to remove those files
+ 
+git clean -f -xnd    #--force
+Now it will remove above mentioned fiels and directories 
+```
 
 **Git reset: Remove added files to git only from local machine**
 ```shell
@@ -128,8 +161,6 @@ git reset    #for undo git add -A
 #git rm -rf --cached .  
 #git rm -r --cached <foldername>
 ```
-
-
 *You need to make a commit in order to push something on the web*
 ```shell
 git commit -m "first commit"
@@ -364,6 +395,405 @@ but now make chaneges in exp after checking out ie add 1 file
 now checkout back to master
 now make changes in master again 
 these new changes wont be there in exp agian since it was checked out earlier.
+
+
+
+
+
+
+
+
+********************************************
+Creating Snapshot
+
+Initializing a repository
+
+git init
+
+Staging files
+
+git add filel.js # Stages a single file
+
+git add filel.jsfile2.js # Stages multiple files
+
+git add *.js # Stages with a pattern
+
+git add . # Stages the current directory and all its content
+
+Viewing the status
+
+git status # Full status
+git status -s # Short status
+Committing the staged files
+
+git commit -m “Message” # Commits with a one-line message
+
+git commit # Opens the default editor to type a long message
+
+Skipping the staging area
+git commit —am “Message”
+
+Removing files
+git rm filel js # Removes from working directory and staging area
+git rm --cached filel.js # Removes from staging area only
+
+Renaming or moving files
+git mv filel.js file]. txt
+Viewing the staged/unstaged changes
+
+git diff # Shows unstaged changes
+git diff --staged # Shows staged changes
+git diff --cached # Same as the above
+
+Viewing the history
+
+git log # Full history
+git log --oneline # Summary
+git log —-reverse # Lists the commits from the oldest to the newest
+
+Viewing a commit
+
+git show 921a2ff # Shows the given commit
+
+git show HEAD # Shows the last commit
+
+git show HEAD~2 # Two steps before the last commit
+
+git show HEAD:file.js # Shows the version of file.js stored in the last commit
+
+Unstaging files (undoing git add)
+git restore --staged file.js # Copies the last version of file.js from repo to index
+
+Discarding local changes
+
+git restore file.js # Copies file.js from index to working directory
+
+git restore filel.js file2.js # Restores multiple files in working directory
+
+git restore . # Discards all local changes (except untracked files)
+git clean -fd # Removes all untracked files
+
+Restoring an earlier version of a file
+git restore ——source=HEAD~2 file.js
+Browsing History
+
+Viewing the history
+git log --stat # Shows the list of modified files
+
+git log --patch # Shows the actual changes (patches)
+
+Filtering the history
+
+git log -3 # Shows the last 3 entries
+git log ——author="Mosh"
+
+git log —before="2020-08-17"
+
+git log ——after="one week ago”
+
+git log ——grep="GUI" # Commits with “GUI" in their message
+git log -5"GUI" # Commits with "GUI" in their patches
+git log hash1..hash2
+git log file.txt
+
+Hi
+
+Range of commits
+
+4
+
+¢ Commits that touched file. txt
+
+Formatting the log output
+git log ——pretty=format:"%an committed %H"
+
+Creating an alias
+git config ——global alias.lg “log ——oneline”
+
+Viewing a commit
+git show HEAD~2
+git show HEAD~2:filel.txt  # Shows the version of file stored in this commit
+
+Comparing commits
+git diff HEAD~2 HEAD # Shows the changes between two commits
+
+git diff HEAD~2 HEAD file.txt # Changes to file.txt only
+Checking out a commit
+git checkout dad47ed
+git checkout master
+
+Finding a bad commit
+git bisect start
+
+git bisect bad
+git bisect good ca49180
+git bisect reset
+
+Finding contributors
+git shortlog
+
+Viewing the history of a file
+
+git log file.txt
+git log —-stat file.txt
+
+git log --patch file.txt
+
+Finding the author of lines
+git blame file.txt
+
+Tagging
+
+git tag v1.0
+
+git tag v1.0 5e7a828
+git tag
+
+git tag -d v1.0
+
+#
+i
+
+¥
+
+#
+
++
+
+Checks out the given commit
+
+Checks out the master branch
+
+Marks the current commit as a bad commit
+Marks the given commit as a good commit
+
+Terminates the bisect session
+
+Shows the commits that touched file.txt
+Shows statistics (the number of changes) for file.txt
+
+Shows the patches (changes) applied to file.txt
+
+Shows the author of each line in file.txt
+
+Tags the last commit as v1.0
+Tags an earlier commit
+Lists all the tags
+
+Deletes the given tag
+Branching & Merging
+
+Managing branches
+
+git branch bugfix # Creates a new branch called bugfix
+git checkout bugfix # Switches to the bugfix branch
+
+git switch bugfix # Same as the above
+
+git switch -C bugfix # Creates and switches
+
+git branch -d bugfix # Deletes the bugfix branch
+
+Comparing branches
+
+git log master..bugfix # Lists the commits in the bugfix branch not in master
+git diff master..bugfix # Shows the summary of changes
+
+Stashing
+
+git stash push -m “New tax rules" # Createsa new stash
+
+git stash list # Lists all the stashes
+
+git stash show stash@{1} # Shows the given stash
+git stash show 1 # shortcut forstash@{1}
++
+
+git stash apply 1 + Applies the given stash to the working dir
+
+git stash drop 1 # Deletes the given stash
+
+git stash clear # Deletes all the stashes
+
+Merging
+
+git merge bugfix # Merges the bugfix branch into the current branch
+
+git merge —no-ffbugfix # Createsa merge commit even if FF is possible
+git merge ——squash bugfix # Performs a squash merge
+
+git merge —abort # Aborts the merge
+Viewing the merged branches
+
+git branch --merged # Shows the merge
+
+git branch ——no-merged # Shows the unmerged |
+
+Rebasing
+
+git rebase master # Changes the base of the
+Cherry picking
+git cherry-pick dad47ed # Applies tl en com
+Collaboration
+
+Cloning a repository
+git clone url
+
+Syncing with remotes
+
+git fetch origin master # Fetches master from origin
+
+git fetch origin # Fetches all objects from origin
+
+git fetch # Shortcut for "git fetch origin
+
+git pull # Fetch + merge
+
+git push origin master # Pushes master to origin
+
+git push # Shortcut for “git push origin master”
+
+Sharing tags
+git push origin v1.0 # Pushes tag vl.0to origir
+
+git push origin —delete v1.0
+
+Sharing branches
+
+git branch -r # Shows remote tracking branches
+
+git branch -vv # Shows local & remote tracking branches
+git push -u origin bugfix # Pushes bugfix to origi
+
+git push —d origin bugfix # Removes bugfix from origin
+
+Managing remotes
+
+git remote # Shows remote repos
+git remote add upstream url # Adds a new remote called upstream
+git remote rm upstream # Remotes upstream
+Rewriting History
+
+Undoing commits
+git reset ——soft HEADA # Removes the last commit, keeps changed staged
+
+git reset ——mixed HEADA  # Unstages the changes as well
+git reset -~hard HEADA # Discards local changes
+
+Reverting commits
+git revert 72856ea # Reverts the given commit
+git revert HEAD~3.. # Reverts the last three commits
+
+git revert ——no-commit HEAD-3..
+
+Recovering lost commits
+git reflog # Shows the history of HEAD
+
+git reflog show bugfix # Shows the history of bugfix pointer
+
+Amending the last commit
+git commit --amend
+
+Interactive rebasing
+git rebase -i HEAD~5
+
+
+*************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
