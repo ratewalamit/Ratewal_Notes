@@ -166,7 +166,6 @@ git reset    #for undo git add -A
 git commit -m "first commit"
 ```
 ----
-
 **History of a file**
 ```
 git log -p -- <filename>
@@ -181,6 +180,14 @@ wiht some name of your choice i.e. 'origin'
 git remote add origin git@github.com:ratewalamit/POWMES.git
 ```
 ----
+
+**Git diff**
+```
+git diff    #changes in working copy with respect to index(last git add)
+git diff HEAD #changes with respect to last commit
+git diff --staged # changes bw added and last commit....Assume you have made changes after last git add,now do git diff --cached, you will see nothing, but now do git add -A,  and again do git diff --cached, now you will see what you saw with git diff  
+```
+
 
 **Pushing local changes on remote server**
 
@@ -441,9 +448,6 @@ Renaming or moving files
 git mv filel.js file]. txt
 Viewing the staged/unstaged changes
 
-git diff # Shows unstaged changes
-git diff --staged # Shows staged changes
-git diff --cached # Same as the above
 
 Viewing the history
 
