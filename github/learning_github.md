@@ -1,3 +1,4 @@
+
 ----
 # Learning Github: git-cheat-sheat  
 To push your content to gihub....your local ssh key need to be stored at github ( can be located in ssh_keys menu of github). This will avoid typing you the github password again and again.
@@ -218,6 +219,55 @@ git reflog show bugfix # Shows the history of bugfix pointer
 git commit --amend   # modify last commit without creating a new commit
 ```
 
+**git log**
+```shell
+#Viewing the history
+git log file.txt --patch  #shows changes in file.txt in differetn commits
+git blame file.txt  #shows only chagnes made to this file by different authors 
+git log --patch # Shows the actual changes (patches)
+git log --stat # Shows the list of modified files
+
+Filtering the history
+git log -3 # Shows the last 3 entries
+git log ——author="Mosh"
+git log —before="2020-08-17"
+git log ——after="one week ago”
+git log ——grep="GUI" # Commits with “GUI" in their message
+git log -5"GUI" # Commits with "GUI" in their patches
+git log hash1..hash2
+```
+#
+
+**Stashing/saving local changes**
+```shell
+#used to store lacal changes, after creating a stash, the repo fall back to state just after previous commit
+git stash push -m “New tax rules" # Createsa new stash with this name
+git stash list # Lists all the stashes
+git stash show stash@{1} # Shows the given stash
+git stash show 1 # shortcut forstash@{1}
+git stash show 1 --patch # shows actual canges in stash1
+
+git stash apply 1 + Applies the given stash to the working dir
+
+git stash drop 1 # Deletes the given stash
+git stash clear # Deletes all the stashes
+
+#
+git stash pop  #applies latest stash ie 0 and drop stash0.
+
+```
+#
+
+
+**Tagging**
+```shell
+git tag v1.0 #tags last commit to v1.0  
+
+git tag v1.0 5e7a828 #tags particular commit to v1.0
+git tag #shows all tags
+git tag -d v1.0 #delete tag
+```
+
 **Pushing local changes on remote server**
 
 Note:  *Before pushing local changes to server you need to do git add and git commint* 
@@ -256,9 +306,15 @@ Starting a new repository with name main
 
 **Push an existing repository from the command line**
 ```shell
+#Git Push
 git remote add origin git@github.com:ratewalamit/POWMES.git
 git branch -M main
 git push -u origin main
+git push server_repo local_branch_name:server_branch_name
+#server_repo : contain url of the repository
+#if local_branch_name dont exist > will give error
+#if server_branch_name dont exist > will create server_branch_name branch at server
+#if both exist will paste local_bramch_name into serer_branch_name
 ```
 ----
 
@@ -286,9 +342,17 @@ git checkout master
 git pull               # to update the state to the latest remote master state
 git merge testing      # to bring changes to local master from your develop branch
 git push origin master # push current HEAD to remote master branch
-```
-*To push your local branch to particular remtote branch*
-```#git push <remote> <local branch name>:<remote branch to push into>``` 
+
+#To push your local branch to particular remtote branch
+#git push <remote> <local branch name>:<remote branch to push into> 
+#Note : if you cloned some repository, and now you want to commit changes to the repository
+first set your user identity ie 
+git config --global user.email ratewalamit@gmail.com
+git config --global user.name  ratewalamit
+#(remove –global to set identity to this repository only)
+#otehrewise you wont be able to commit changes.
+git push --mirror https://github.com/exampleuser/new-repository.git #will push exact mirror image of the repository to the repository defined by the link
+``` 	
 
 
 **Deploy from a particular folder**
@@ -318,52 +382,7 @@ Steps:
 
 
 git merge my_branch (merge my_branch to the branch I am working on. When I branched all files from parent got copied to my_branch . Now after this merge command extra files in my_branch will also get added to present working branch.(upto last commit of datughter branch)
-
-
-git rebase my_branch(will change commits to parent branch making us look daughter was never a branch))
-
-git remote add origin git @github.com:amitkiucaa:ggjklfalgd.git create a remote of name “origin ” of url(git@.....git)
-
-
-(Before pushing anything please add your public ssh key to your github account in order to be able to use push/pull)
-git push -u origin master(if fast forwarding wont lose history) (def of origin in above line , you can push to other branch also)
-git push --force origin master(forcefully merge will lose history)
-
-git push server_repo repository_name (server_repo: is deifned as git remote add server_repo <url_of_repo> i.e. analogus to origin
-(will push whatever is there in current working branch to url embadded in server_repo, with branch repository_name, if repository_name does not exist it will create it)
-git push server_repo repository_name:
-
-
-Note : if you cloned some repository :
-and now you want to commit changes to the repository
-first set your user identity ie
-git config --global user.email ratewalamit@gmail.com
-git config --global user.name  ratewalamit
-(remove –global to set identity to this repository only)
-
-otehrewise you wont be able to commit changes.
-
-
-
-git push --mirror https://github.com/exampleuser/new-repository.git #will push exact mirror image of the repository to the repository defined by the link
-
-
-	 	 	 	
-Git Push
-
-git push server_repo local_branch_name:server_branch_name
-
-	server_repo : contain url of the repository
-	if local_branch_name dont exist > will give error
-if server_branch_name dont exist > will create server_branch_name branch at server
-if both exist will paste local_bramch_name into serer_branch_name
-
-
-
-Git Merge
-
-
-
+ 	
 **Syncing changes: git pull**
 Let us assume you have file1.py file2.py file3.py along with folder1/file1.py folder2/file1.py
 now you simply strat wiht adding origin to remote directory and let us see how fun stuff goes there
@@ -413,14 +432,30 @@ git push
 
 
 **Git merge**
-first ceckout to the branch where you want to merge( ie Master)
-now use:
-git merge bracnh_name     (it will merge branchname to Master)
-if there is any commin file in branch_name and master: it will be kept( If you merge updated copy of the file then it will simply replace updated copy with the orignal in master. But if in branchname there are come changes made,then you commited in branchname, now you have come to master made some changes and commited in master, now you want to merge , since in master the copy is updated one, hence it will raise some conflicts and ask u to address them.)
+```shell
+
+#Merging
+git merge bugfix # Merges the bugfix branch into the current branch
+git merge —no-ff bugfix # Createsa merge commit even if FF is possible
+git merge ——squash bugfix # Performs a squash merge
+git merge —abort # Aborts the merge
+
+#Viewing the merged branches
+git branch --merged # Shows the merge
+git branch ——no-merged # Shows the unmerged |
+
+
+#In detail
+#first ceckout to the branch where you want to merge( ie Master), now use:
+git merge bracnh_name   #it will merge branchname to Master
+#new files from branch_name will be copied to master
+
+#Common files: if file in main is older than branch_name: it will be replaced
+#Common files: if file in main is newer than branch_name: conflict will be raised and 
+( If you merge updated copy of the file then it will simply replace updated copy with the orignal in master. But if in branchname there are come changes made,then you commited in branchname, now you have come to master made some changes and commited in master, now you want to merge , since in master the copy is updated one, hence it will raise some conflicts and ask u to address them.)
 if there are files in master not in branch_name : keep those as it is
 if there are files in branch_name not in master: would be copied to master
 (Note if there was a file present in both repo esrlier and it has been deleted in brach_name, on mergng exp to master this file in the master will also be deleted.)
-
 
 Now: if two branches ie master and exp are mergeed 
 and you make changes to master
@@ -431,6 +466,7 @@ but now make chaneges in exp after checking out ie add 1 file
 now checkout back to master
 now make changes in master again 
 these new changes wont be there in exp agian since it was checked out earlier.
+```
 
 
 
@@ -438,280 +474,6 @@ these new changes wont be there in exp agian since it was checked out earlier.
 
 
 
-
-********************************************
-Creating Snapshot
-
-Initializing a repository
-
-git init
-
-Staging files
-
-git add filel.js # Stages a single file
-
-git add filel.jsfile2.js # Stages multiple files
-
-git add *.js # Stages with a pattern
-
-git add . # Stages the current directory and all its content
-
-Viewing the status
-
-git status # Full status
-git status -s # Short status
-Committing the staged files
-
-git commit -m “Message” # Commits with a one-line message
-
-git commit # Opens the default editor to type a long message
-
-Skipping the staging area
-git commit —am “Message”
-
-Removing files
-git rm filel js # Removes from working directory and staging area
-git rm --cached filel.js # Removes from staging area only
-
-Renaming or moving files
-git mv filel.js file]. txt
-Viewing the staged/unstaged changes
-
-
-Viewing the history
-
-git log # Full history
-git log --oneline # Summary
-git log —-reverse # Lists the commits from the oldest to the newest
-
-Viewing a commit
-
-git show 921a2ff # Shows the given commit
-
-git show HEAD # Shows the last commit
-
-git show HEAD~2 # Two steps before the last commit
-
-git show HEAD:file.js # Shows the version of file.js stored in the last commit
-
-Unstaging files (undoing git add)
-git restore --staged file.js # Copies the last version of file.js from repo to index
-
-Discarding local changes
-
-git restore file.js # Copies file.js from index to working directory
-
-git restore filel.js file2.js # Restores multiple files in working directory
-
-git restore . # Discards all local changes (except untracked files)
-git clean -fd # Removes all untracked files
-
-Restoring an earlier version of a file
-git restore ——source=HEAD~2 file.js
-Browsing History
-
-Viewing the history
-git log --stat # Shows the list of modified files
-
-git log --patch # Shows the actual changes (patches)
-
-Filtering the history
-
-git log -3 # Shows the last 3 entries
-git log ——author="Mosh"
-
-git log —before="2020-08-17"
-
-git log ——after="one week ago”
-
-git log ——grep="GUI" # Commits with “GUI" in their message
-git log -5"GUI" # Commits with "GUI" in their patches
-git log hash1..hash2
-git log file.txt
-
-Hi
-
-Range of commits
-
-4
-
-¢ Commits that touched file. txt
-
-Formatting the log output
-git log ——pretty=format:"%an committed %H"
-
-Creating an alias
-git config ——global alias.lg “log ——oneline”
-
-Viewing a commit
-git show HEAD~2
-git show HEAD~2:filel.txt  # Shows the version of file stored in this commit
-
-Comparing commits
-git diff HEAD~2 HEAD # Shows the changes between two commits
-
-git diff HEAD~2 HEAD file.txt # Changes to file.txt only
-Checking out a commit
-git checkout dad47ed
-git checkout master
-
-Finding a bad commit
-git bisect start
-
-git bisect bad
-git bisect good ca49180
-git bisect reset
-
-Finding contributors
-git shortlog
-
-Viewing the history of a file
-
-git log file.txt
-git log —-stat file.txt
-
-git log --patch file.txt
-
-Finding the author of lines
-git blame file.txt
-
-Tagging
-
-git tag v1.0
-
-git tag v1.0 5e7a828
-git tag
-
-git tag -d v1.0
-
-#
-i
-
-¥
-
-#
-
-+
-
-Checks out the given commit
-
-Checks out the master branch
-
-Marks the current commit as a bad commit
-Marks the given commit as a good commit
-
-Terminates the bisect session
-
-Shows the commits that touched file.txt
-Shows statistics (the number of changes) for file.txt
-
-Shows the patches (changes) applied to file.txt
-
-Shows the author of each line in file.txt
-
-Tags the last commit as v1.0
-Tags an earlier commit
-Lists all the tags
-
-Deletes the given tag
-Branching & Merging
-
-Managing branches
-
-git branch bugfix # Creates a new branch called bugfix
-git checkout bugfix # Switches to the bugfix branch
-
-git switch bugfix # Same as the above
-
-git switch -C bugfix # Creates and switches
-
-git branch -d bugfix # Deletes the bugfix branch
-
-Comparing branches
-
-git log master..bugfix # Lists the commits in the bugfix branch not in master
-git diff master..bugfix # Shows the summary of changes
-
-Stashing
-
-git stash push -m “New tax rules" # Createsa new stash
-
-git stash list # Lists all the stashes
-
-git stash show stash@{1} # Shows the given stash
-git stash show 1 # shortcut forstash@{1}
-+
-
-git stash apply 1 + Applies the given stash to the working dir
-
-git stash drop 1 # Deletes the given stash
-
-git stash clear # Deletes all the stashes
-
-Merging
-
-git merge bugfix # Merges the bugfix branch into the current branch
-
-git merge —no-ffbugfix # Createsa merge commit even if FF is possible
-git merge ——squash bugfix # Performs a squash merge
-
-git merge —abort # Aborts the merge
-Viewing the merged branches
-
-git branch --merged # Shows the merge
-
-git branch ——no-merged # Shows the unmerged |
-
-Rebasing
-
-git rebase master # Changes the base of the
-Cherry picking
-git cherry-pick dad47ed # Applies tl en com
-Collaboration
-
-Cloning a repository
-git clone url
-
-Syncing with remotes
-
-git fetch origin master # Fetches master from origin
-
-git fetch origin # Fetches all objects from origin
-
-git fetch # Shortcut for "git fetch origin
-
-git pull # Fetch + merge
-
-git push origin master # Pushes master to origin
-
-git push # Shortcut for “git push origin master”
-
-Sharing tags
-git push origin v1.0 # Pushes tag vl.0to origir
-
-git push origin —delete v1.0
-
-Sharing branches
-
-git branch -r # Shows remote tracking branches
-
-git branch -vv # Shows local & remote tracking branches
-git push -u origin bugfix # Pushes bugfix to origi
-
-git push —d origin bugfix # Removes bugfix from origin
-
-Managing remotes
-
-git remote # Shows remote repos
-git remote add upstream url # Adds a new remote called upstream
-git remote rm upstream # Remotes upstream
-Rewriting History
-
-
-
-
-
-*************************************************
 
 
 
