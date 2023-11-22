@@ -188,6 +188,35 @@ git diff HEAD #changes with respect to last commit
 git diff --staged # changes bw added and last commit....Assume you have made changes after last git add,now do git diff --cached, you will see nothing, but now do git add -A,  and again do git diff --cached, now you will see what you saw with git diff  
 ```
 
+**Undoing commits**
+```shell
+#its better to use revert than reset
+#reset is only for reverting local changes only, if the changes have been pushed use revert.
+#reset rewrite the commit history, hence avoid it.
+
+Reverting commits
+git revert 72856ea  ——no-commit # Reverts the given commit, ——no-commit make sure this reverting is to avoid commiting changes made by this revert.
+git revert HEAD~3..Head #or git revert HEAD~3.. # Reverts the last three commits  
+#you can use commit names also instead of head
+git revert commitA commitC #will revert commit A&C leaving B as it is.
+#
+
+git reset ——soft HEADA # Removes the last commit, keeps changed staged
+git reset ——mixed HEADA  # Unstages the changes as well
+git reset -~hard HEADA # Discards local changes
+git reset commitP --hard #delete everything after commitP happened to working copy
+```
+
+**Recovering lost commits/See full history of HEAD**
+```shell
+git reflog # Shows the history of HEAD
+git reflog show bugfix # Shows the history of bugfix pointer
+```
+
+**Amending the last commit**
+```shell
+git commit --amend   # modify last commit without creating a new commit
+```
 
 **Pushing local changes on remote server**
 
@@ -678,28 +707,8 @@ git remote add upstream url # Adds a new remote called upstream
 git remote rm upstream # Remotes upstream
 Rewriting History
 
-Undoing commits
-git reset ——soft HEADA # Removes the last commit, keeps changed staged
 
-git reset ——mixed HEADA  # Unstages the changes as well
-git reset -~hard HEADA # Discards local changes
 
-Reverting commits
-git revert 72856ea # Reverts the given commit
-git revert HEAD~3.. # Reverts the last three commits
-
-git revert ——no-commit HEAD-3..
-
-Recovering lost commits
-git reflog # Shows the history of HEAD
-
-git reflog show bugfix # Shows the history of bugfix pointer
-
-Amending the last commit
-git commit --amend
-
-Interactive rebasing
-git rebase -i HEAD~5
 
 
 *************************************************
