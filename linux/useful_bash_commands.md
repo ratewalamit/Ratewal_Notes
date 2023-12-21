@@ -4,8 +4,11 @@ for i in 9.0,10.25 10.25,10.6 10.6,11.5; do (  IFS=",";set -- $i;mmin=$1;mmax=$2
 ```
 **search and replace**
 ```shell
-#search and relace a text from all files
-find . -type f -exec sed -i 's#from#to#' {} \;
+#search and relace a text from all files/specific files
+find . -type f -exec sed -i 's#from#to#' {} \;   #for all files
+find . -type f \( -name "shapenoise_error.sh" -o -name "jackknife_error.sh" -o -name "*.txt" \)  -exec sed -i 's#gama_randoms_in_hsc_S19#redmapper_randoms_in_hsc_S19#' {} \;   #for specific files
+
+
 
 #using sed (replacing matched content wiht results from some other bash command)
 sed -i -e "s/sim_name  =   galaxy_cosmo171/$(grep -v "^;" config_sim_galB.ini|grep -e "sim_name[[:blank:]]\{0,\}=[[:blank:]]\{0,\}galaxy_cosmo[0-9][0-9]0")/g" config_sim_galB.ini
