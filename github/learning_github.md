@@ -15,8 +15,12 @@ Host your_github_username
     IdentityFile ~/.ssh/id_rsa.github
     #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
 ```
+
 ## Modify the remote origin
-### Most important is you give url in the proper form, i.e. as given below, it wont work for https://github.com/ratewalamit/reponame.git
+### Most important is you give url in the proper form, i.e. as given below, it wont work for
+:x: https://github.com/ratewalamit/reponame.git
+:heavy_check_mark: git@github.com:your_github_username/repository_name.git
+
 ```
 git remote remove origin
 git remote add origin git@github.com:your_github_username/repository_name.git   #please mind it is NOT https/..... 
@@ -26,6 +30,10 @@ git push
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d1e826 (minor edits)
 ----
 ## A sample global gitconfig file ~/.gitconfig
 ```shell
