@@ -6,6 +6,26 @@ To push your content to gihub....your local ssh key need to be stored at github 
 
 ----
 
+**Using ssh-keys for github authentications/password**
+
+Edit your local ~/.ssh/config
+```
+Host your_github_username
+    Hostname github.com
+    IdentityFile ~/.ssh/id_rsa.github
+    #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
+```
+## Modify the remote origin
+### Most important is you give url in the proper form, i.e. as given below, it wont work for https://github.com/ratewalamit/reponame.git
+```
+git remote remove origin
+git remote add origin git@github.com:your_github_username/repository_name.git   #please mind it is NOT https/..... 
+git push
+```
+
+
+
+
 ----
 ## A sample global gitconfig file ~/.gitconfig
 ```shell
@@ -303,6 +323,14 @@ Starting a new repository with name main
 
 ----
 
+**Using tokens for github authentications/password**(Better is using ssh keys, see below)
+First generate a token with some rights(atlest repo rights)
+```
+git remote remove origin
+git remote add origin https://[TOKEN]@github.com/[REPO-OWNER]/[REPO-NAME]
+git push
+```
+----
 
 **Push an existing repository from the command line**
 ```shell
@@ -405,31 +433,6 @@ git pull --force origin new_branch2:master
 git pull --force origin new_branch2:master
 ```
 
-
-**Using tokens for github authentications**(Better is using ssh keys, see below)
-First generate a token with some rights(atlest repo rights)
-```
-git remote remove origin
-git remote add origin https://[TOKEN]@github.com/[REPO-OWNER]/[REPO-NAME]
-git push
-```
-
-**Using ssh-keys for github authentications**
-
-Edit your local ~/.ssh/config
-```
-Host your_github_username
-    Hostname github.com
-    IdentityFile ~/.ssh/id_rsa.github
-    #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
-```
-#Modify the remote origin
-##Most important is you give url in the proper form, i.e. as given below, it wont work for https://github.com/ratewalamit/reponame.git
-```
-git remote remove origin
-git remote add origin git@github.com:your_github_username/repository_name.git
-git push
-```
 
 
 **Git merge**
