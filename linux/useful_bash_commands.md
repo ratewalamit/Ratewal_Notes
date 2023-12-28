@@ -5,6 +5,7 @@ for i in 9.0,10.25 10.25,10.6 10.6,11.5; do (  IFS=",";set -- $i;mmin=$1;mmax=$2
 **search and replace**
 ```shell
 #search and relace a text from all files/specific files
+find . -type f -name "mcmc_satellites_conc_mass_relation_env_effect_20231222.py" -exec sed -i -e 's#mbmin#lbmin#' -e 's#mbmax#lbmax#' {} \;
 find . -type f -exec sed -i 's#from#to#' {} \;   #for all files
 find . -type f \( -name "shapenoise_error.sh" -o -name "jackknife_error.sh" -o -name "*.txt" \)  -exec sed -i 's#gama_randoms_in_hsc_S19#redmapper_randoms_in_hsc_S19#' {} \;   #for specific files
 
