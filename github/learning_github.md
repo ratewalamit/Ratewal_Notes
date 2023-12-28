@@ -19,6 +19,7 @@ Host your_github_username
 ## Modify the remote origin
 ### Most important is you give url in the proper form, i.e. as given below, it wont work for
 :x: https://github.com/ratewalamit/reponame.git
+
 :heavy_check_mark: git@github.com:your_github_username/repository_name.git
 
 ```
@@ -27,13 +28,6 @@ git remote add origin git@github.com:your_github_username/repository_name.git   
 git push
 ```
 
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0d1e826 (minor edits)
 ----
 ## A sample global gitconfig file ~/.gitconfig
 ```shell
