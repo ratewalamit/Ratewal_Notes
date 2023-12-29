@@ -15,9 +15,7 @@ Host your_github_username
     IdentityFile ~/.ssh/id_rsa.github
     #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
 ```
-
-## Modify the remote origin
-### Most important is you give url in the proper form, i.e. as given below, it wont work for
+*Most important is you give url in the proper form, i.e. as given below, it wont work for*
 :x: https://github.com/ratewalamit/reponame.git
 
 :heavy_check_mark: git@github.com:your_github_username/repository_name.git
@@ -289,6 +287,21 @@ git tag v1.0 5e7a828 #tags particular commit to v1.0
 git tag #shows all tags
 git tag -d v1.0 #delete tag
 ```
+
+**Submodules nested git repositories (repository inside repository)**
+```
+git submodule add <gitUrl>    #if you want to clone a fresh repository
+git submodule add <gitUrl> foldername   #if repository is already cloned
+#it sill make changes in .gitmodule file
+#To submodules need to be push independently, they are not pushed when you push main repository
+#They are note cloned automaticaly when you clone the main repository. To clone them also
+git clone <giturl> --recursive-submodules
+#then pulling any update from submodules 
+git pull --recursive-submodules
+#or you can set
+git config submodule.recurse true
+```
+
 
 **Pushing local changes on remote server**
 
