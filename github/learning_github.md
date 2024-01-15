@@ -16,6 +16,7 @@ Host your_github_username
     #IdentitiesOnly yes # remove this line you you want to use id_rsa.pub for authentication, it bypasses the  and use the id_rsa.github instead of id_rsa 
 ```
 *Most important is you give url in the proper form, i.e. as given below, it wont work for*
+
 :x: https://github.com/ratewalamit/reponame.git
 
 :heavy_check_mark: git@github.com:your_github_username/repository_name.git
@@ -376,6 +377,11 @@ git branch -m master main
 **Gitignore: Putting upper limit on files size**
 ```shell
 find . -size +45M >.gitignore
+```
+
+**Manage ignored file list**
+```
+git status --ignored --untracked-files=all >>ignored_file_list
 ```
 
 If the pattern starts with a slash, it matches files and directories only in the repository root.
