@@ -135,6 +135,11 @@ git filter-repo --invert-paths --force --path test_table.fits
 git push --force
 #python3 -m pip install --user git-filter-repo   #to install git-filter-repo
 ```
+**Check tracking of specific file** *will ls the file if it is tracked, else will return an error*
+```shell
+git ls-files --error-unmatch <filename>
+```
+
 
 **Remove/delete files created after last commit**
 ```
