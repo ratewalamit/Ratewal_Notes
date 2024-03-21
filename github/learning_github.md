@@ -33,26 +33,25 @@ git push
 [user]
     email = ratewalamit@gmail.com
     name = ratewalamit
-[core]
-    excludesFile = /mnt/home/student/camit/.gitignore
-    askPass =
-[push]
-    default = matching
 [init]
     defaultBranch = main
-[credential "https://lsst-sqre-prod-git-lfs.s3-us-west-2.amazonaws.com"]
-    helper = store
-[credential "https://s3.lsst.codes"]
-    helper = store
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
 [diff]
     tool = vimdiff
 [difftool]
     prompt = false
+[init]
+    defaultBranch = main
+[log]
+  date = relative
+[format]
+  pretty = format:%Cred%h        %Cblue%ad%x09     %Cred%an%x09%Cgreen%x09   %s
+[core]
+    editor = vim
+    excludesFile = /mnt/home/student/camit/.gitignore
+    askPass =
+[push]
+    default = matching
+
 ```
 ----
 ----
