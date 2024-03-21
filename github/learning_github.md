@@ -33,26 +33,25 @@ git push
 [user]
     email = ratewalamit@gmail.com
     name = ratewalamit
-[core]
-    excludesFile = /mnt/home/student/camit/.gitignore
-    askPass =
-[push]
-    default = matching
 [init]
     defaultBranch = main
-[credential "https://lsst-sqre-prod-git-lfs.s3-us-west-2.amazonaws.com"]
-    helper = store
-[credential "https://s3.lsst.codes"]
-    helper = store
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
 [diff]
     tool = vimdiff
 [difftool]
     prompt = false
+[init]
+    defaultBranch = main
+[log]
+  date = relative
+[format]
+  pretty = format:%Cred%h        %Cblue%ad%x09     %Cred%an%x09%Cgreen%x09   %s
+[core]
+    editor = vim
+    excludesFile = /mnt/home/student/camit/.gitignore
+    askPass =
+[push]
+    default = matching
+
 ```
 ----
 ----
@@ -148,7 +147,16 @@ git clean -fd   #don't ever use it
 #It will remove the files(possible untarckted also) affected after last commit
 ```
 
-
+**Git Apply the changes between commits**
+```shell
+#create a diff file for two commits
+git diff commit_new commit_old >diff.diff  
+#Now apply the diff file if head at commit_new, ie you want to go back to previous commit. The diff file contains destructive lines
+git apply diff.diff
+#if your head is at commit_old: the diff file need to be created accordingly eg git diff commit_old commit_nwe> diff.tex
+#this time the diff will contain additvie lines
+ 
+```
 **Git restore vs reset**
 ```shell
 #restore is a newer feature compared to reset
