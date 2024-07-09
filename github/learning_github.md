@@ -307,6 +307,10 @@ git tag -d v1.0 #delete tag
 git submodule add <gitUrl>    #if you want to clone a fresh repository
 git submodule add <gitUrl> foldername   #if repository is already cloned
 #it sill make changes in .gitmodule file
+
+#if you want to update the content of submodule, you can update and treat the child as independent repository. Howerver, after update in child, your parent will complain about the head of the child as it has changed due to commmit and update of child. Hence you need ot update the head of the parend also by using
+#git submodule update example.com/soundmanager
+
 #To submodules need to be push independently, they are not pushed when you push main repository
 #They are note cloned automaticaly when you clone the main repository. To clone them also
 git clone <giturl> --recursive-submodules
