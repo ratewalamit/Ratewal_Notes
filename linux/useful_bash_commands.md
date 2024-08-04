@@ -32,6 +32,17 @@ while IFS= read -r line; do     echo "$line"; done < doit.sh
 ```
 
 
+**Renaming files**
+```shell
+#!/bin/bash
+for file in *.mp4 *.html
+do
+  [ -e "$file" ] || continue
+  mv "$file" "${file// /_}"
+done
+```
+
+
 **extract corresponding values from dictionary based on matching column**
 ```
 dict_a={}
