@@ -6,3 +6,4 @@
 #change bashrc #from github files
 #install remmina from app center
 #install trashcli
+#install git
