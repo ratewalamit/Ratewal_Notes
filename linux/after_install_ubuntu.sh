@@ -1,3 +1,4 @@
+#exchange bios ctrl and fn keys for lenovo keyboards
 #install vim
 #perform sudo apt upgrade 
 #set trackpad settings, Please restart in order to see these settings into effect
