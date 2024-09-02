@@ -9,6 +9,7 @@
 #install remmina from app center
 #install trashcli
 #install git
+#insgall restoring github time: sudo apt install git-restore-mtime
 #install fingerprint 
 #install libtools using: sudo apt install libinput-tools
 #remove touchpad drivers, ubuntu 24 right now dont have good touchpad driver using sudo apt-get remove xserver-xorg-input-synaptics

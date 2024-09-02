@@ -121,8 +121,15 @@ find .  -type f -name "*.dat*" -exec grep -HL '#OK R2selnbias is already applied
 # -L argument to grep invert the grep result, means files without matching the pattern will be output
 # -H will give names of files of ouput of grep, likewise -n gives line numbers
 ```
+**create latexdiff**
+```shell
+latexdiff-vc --pdf cleaned_main.tex  -r 9f38e
+```
 
-
+***pdfjam join multiple pdf files**
+```shell
+pdfjam --nup 3x2  $(ls Corner_*pdf -rt) --outfile CorneAll.pdf
+```
 <!--- 
 # How to write in Readme.md
 

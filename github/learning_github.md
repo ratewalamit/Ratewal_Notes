@@ -155,6 +155,11 @@ git diff commit_new commit_old >diff.diff
 git apply diff.diff
 #if your head is at commit_old: the diff file need to be created accordingly eg git diff commit_old commit_nwe> diff.tex
 #this time the diff will contain additvie lines
+
+** Apply time stamp on github files/bring back time permissions** 
+```shell
+git restore-mtime
+```
  
 ```
 **Git restore vs reset**
