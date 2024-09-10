@@ -1,7 +1,23 @@
 ﻿
  #Latex Notes
- 
- 
+
+
+**install latex**
+```shell
+sudo apt-get install texlive-full
+```
+**Compile with latex**
+```
+pdflatex paper.tex
+bibtex paper
+pdflatex paper.tex
+pdflatex paper.tex
+``` 
+**latexdiff**
+```shell
+#to create latexdiff you need to first compile with pdflatex as descrived above then
+latexdiff-vc --pdf --revision d2950d2c32 Paper.tex
+```
  
 **insert figure**
 ```
