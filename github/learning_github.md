@@ -67,8 +67,7 @@ git init
 **git branches**
 ```
 git branch branch_name #creating a branch
-git checkout my_branch 
-#make a branch with name my_branch(if it does not exist, if it exist it switches from curretn branch to my_branch branch )
+git checkout my_branch
 ```
 ----
 
