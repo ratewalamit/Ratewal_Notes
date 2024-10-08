@@ -451,3 +451,11 @@ nmcli connection down Hotspot
 nmcli connection modify Hotspot 802-11-wireless-security.key-mgmt sae
 nmcli connection up Hotspot
 ```
+
+**Concat mp4 videos**
+```shell
+#ffmpeg -f concat -safe 0 -i mylist.txt  -vf scale="720:480" output.mp4
+cat mylist.txt
+file 'video1.mp4'
+file 'video2.mp4'
+```
