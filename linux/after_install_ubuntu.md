@@ -4,7 +4,7 @@
 #install the following packages
 ```shell
 sudo apt upgrade
-sudo apt-get -y install vim vlc gimp synaptic trash-cli git git-restore-mtime libinput-tools texlive-full gparted preload gnome-tweaks ubuntu-restricted-extras  
+sudo apt-get -y install vim vlc gimp synaptic trash-cli git git-restore-mtime libinput-tools texlive-full gparted preload gnome-tweaks ubuntu-restricted-extras texmaker 
 ```
 #install chrome
 #install ssh configs

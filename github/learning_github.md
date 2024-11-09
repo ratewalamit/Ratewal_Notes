@@ -51,7 +51,9 @@ git push
     askPass =
 [push]
     default = matching
-
+[alias]
+    preitycolor = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%ad%Creset  %Cgreen(%cr)%Creset %C(white)[%an]%C(reset)  %C(cyan)%s%C(reset)' --abbrev-commit --date=format:\"%Y-%m-%d %H:%M\"
+    slog = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%ad%Creset  %Cgreen(%cr)%Creset %C(white)[%an]%C(reset)  %C(cyan)%s%C(reset)' --abbrev-commit --date=format:\"%Y-%m-%d %H:%M\" -n 20
 ```
 ----
 ----
