@@ -9,6 +9,18 @@ find . -type f -name "mcmc_satellites_conc_mass_relation_env_effect_20231222.py"
 find . -type f -exec sed -i 's#from#to#' {} \;   #for all files
 find . -type f \( -name "shapenoise_error.sh" -o -name "jackknife_error.sh" -o -name "*.txt" \)  -exec sed -i 's#gama_randoms_in_hsc_S19#redmapper_randoms_in_hsc_S19#' {} \;   #for specific files
 
+**ifuse**
+```shell
+#install ifuse first 
+sudo apt-get install build-essential pkg-config checkinstall git autoconf automake libtool-bin libplist-dev libimobiledevice-dev libfuse-dev usbmuxd
+git clone https://github.com/libimobiledevice/ifuse.git
+cd ifuse
+./autogen.sh
+make
+sudo make install
+mkdir For_mountpoint
+ifuse For_mountpoint
+```
 
 
 #using sed (replacing matched content wiht results from some other bash command)
@@ -41,6 +53,7 @@ do
   mv "$file" "${file// /_}"
 done
 ```
+
 
 
 **extract corresponding values from dictionary based on matching column**
